@@ -1,0 +1,600 @@
+"Validar_Componentes As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    BackgroundImage: ='Cocoaa Ice'
+    ImagePosition: =ImagePosition.Stretch
+
+    RectQuickActionBar1 As rectangle:
+        Fill: =RGBA(9, 33, 98, 1)
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    Canvas1 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =Parent.Height - Self.Y
+        Width: =Parent.Width
+        Y: =RectQuickActionBar1.Y + RectQuickActionBar1.Height
+        ZIndex: =3
+
+        DataCard1 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =1597
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Image6_4 As image:
+                DisplayMode: =DisplayMode.View
+                Fill: =RGBA(0, 0, 0, 1)
+                Height: =93
+                Image: ='Logo-Personal'
+                ImagePosition: =ImagePosition.Fill
+                Width: =640
+                Y: =1504
+                ZIndex: =3
+
+            Label13 As label:
+                Height: =70
+                Size: =21
+                Text: =varFichaTecnica.BIEN_INFORMATICO
+                Width: =296
+                X: =272
+                Y: =50
+                ZIndex: =4
+
+            Label13_1 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =70
+                Size: =21
+                Text: |-
+                    ="Bien Informatico: "
+                Width: =211
+                X: =61
+                Y: =50
+                ZIndex: =5
+
+            Rectangle8 As rectangle:
+                BorderStyle: =BorderStyle.Dotted
+                BorderThickness: =2
+                Fill: =RGBA(0, 0, 0, 0)
+                Width: =553
+                X: =43
+                Y: =35
+                ZIndex: =6
+
+            PC_Escritorio_Laptop As groupContainer.manualLayoutContainer:
+                Height: =676
+                Visible: =If(varFichaTecnica.BIEN_INFORMATICO = "PC Escritorio" || varFichaTecnica.BIEN_INFORMATICO = "Laptop",true,false)
+                Width: =586
+                X: =27
+                Y: =181
+                ZIndex: =7
+
+                Rectangle8_1 As rectangle:
+                    BorderStyle: =BorderStyle.Dotted
+                    BorderThickness: =3
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =617
+                    Width: =586
+                    ZIndex: =1
+
+                Rectangle8_2 As rectangle:
+                    BorderStyle: =BorderStyle.Dotted
+                    BorderThickness: =2
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =1
+                    Width: =585
+                    Y: =86
+                    ZIndex: =2
+
+                Label15 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =55
+                    Size: =16
+                    Text: |-
+                        ="Disco Duro: "
+                    Width: =223
+                    X: =12
+                    Y: =13
+                    ZIndex: =3
+
+                Label15_1 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =87
+                    Size: =16
+                    Text: |-
+                        ="Memoria:"
+                    Width: =212
+                    Y: =86
+                    ZIndex: =4
+
+                Label15_2 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =87
+                    Size: =16
+                    Text: |-
+                        ="Placa Mainbord:"
+                    Width: =212
+                    Y: =174
+                    ZIndex: =5
+
+                Label15_3 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =87
+                    Size: =16
+                    Text: |-
+                        ="Tarjeta de Video:"
+                    Width: =211
+                    Y: =265
+                    ZIndex: =6
+
+                Label15_4 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =87
+                    Size: =16
+                    Text: |-
+                        ="Tarjeta de Red:"
+                    Width: =211
+                    Y: =353
+                    ZIndex: =7
+
+                Label15_5 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =87
+                    Size: =16
+                    Text: |-
+                        ="Fuente de Poder:"
+                    Width: =211
+                    Y: =443
+                    ZIndex: =8
+
+                Label15_6 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =87
+                    Size: =16
+                    Text: |-
+                        ="Lectora CD-DVD:"
+                    Width: =212
+                    Y: =505
+                    ZIndex: =9
+
+                Rectangle8_3 As rectangle:
+                    BorderStyle: =BorderStyle.Dotted
+                    BorderThickness: =2
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =1
+                    Width: =586
+                    Y: =173
+                    ZIndex: =10
+
+                Rectangle8_4 As rectangle:
+                    BorderStyle: =BorderStyle.Dotted
+                    BorderThickness: =2
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =1
+                    Width: =586
+                    Y: =264
+                    ZIndex: =11
+
+                Rectangle8_5 As rectangle:
+                    BorderStyle: =BorderStyle.Dotted
+                    BorderThickness: =2
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =1
+                    Width: =586
+                    Y: =350
+                    ZIndex: =12
+
+                Rectangle8_6 As rectangle:
+                    BorderStyle: =BorderStyle.Dotted
+                    BorderThickness: =2
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =1
+                    Width: =586
+                    Y: =442
+                    ZIndex: =13
+
+                Rectangle8_7 As rectangle:
+                    BorderStyle: =BorderStyle.Dotted
+                    BorderThickness: =2
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =1
+                    Width: =586
+                    Y: =529
+                    ZIndex: =14
+
+                Select_DiscoDuro As radio:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Height: =86
+                    Items: =["Operativo","Inoperativo"]
+                    Layout: =Layout.Horizontal
+                    RadioSize: =50
+                    Reset: =resetearControlesBaja
+                    Size: =16
+                    Width: =375
+                    X: =211
+                    Y: =13
+                    ZIndex: =15
+
+                Select_Memoria As radio:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Height: =72
+                    Items: =["Operativo","Inoperativo"]
+                    Layout: =Layout.Horizontal
+                    RadioSize: =50
+                    Reset: =resetearControlesBaja
+                    Size: =16
+                    Width: =375
+                    X: =211
+                    Y: =94
+                    ZIndex: =16
+
+                Select_PlacaMain As radio:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Height: =72
+                    Items: =["Operativo","Inoperativo"]
+                    Layout: =Layout.Horizontal
+                    RadioSize: =50
+                    Reset: =resetearControlesBaja
+                    Size: =16
+                    Width: =374
+                    X: =212
+                    Y: =186
+                    ZIndex: =17
+
+                Select_TVideo As radio:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Height: =72
+                    Items: =["Operativo","Inoperativo"]
+                    Layout: =Layout.Horizontal
+                    RadioSize: =50
+                    Reset: =resetearControlesBaja
+                    Size: =16
+                    Width: =374
+                    X: =212
+                    Y: =274
+                    ZIndex: =18
+
+                Select_TRed As radio:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Height: =72
+                    Items: =["Operativo","Inoperativo"]
+                    Layout: =Layout.Horizontal
+                    RadioSize: =50
+                    Reset: =resetearControlesBaja
+                    Size: =16
+                    Width: =374
+                    X: =212
+                    Y: =362
+                    ZIndex: =19
+
+                Select_FPoder As radio:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Height: =72
+                    Items: =["Operativo","Inoperativo"]
+                    Layout: =Layout.Horizontal
+                    RadioSize: =50
+                    Reset: =resetearControlesBaja
+                    Size: =16
+                    Width: =374
+                    X: =212
+                    Y: =449
+                    ZIndex: =20
+
+                Select_Lectora As radio:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Height: =72
+                    Items: =["Operativo","Inoperativo"]
+                    Layout: =Layout.Horizontal
+                    RadioSize: =50
+                    Reset: =resetearControlesBaja
+                    Size: =16
+                    Width: =374
+                    X: =211
+                    Y: =533
+                    ZIndex: =21
+
+                Rectangle8_8 As rectangle:
+                    BorderStyle: =BorderStyle.Dotted
+                    BorderThickness: =2
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =617
+                    Width: =1
+                    X: =211
+                    ZIndex: =22
+
+            Impresora As groupContainer.manualLayoutContainer:
+                Height: =631
+                Visible: =If(varFichaTecnica.BIEN_INFORMATICO = "Impresora",true,false)
+                Width: =586
+                X: =27
+                Y: =181
+                ZIndex: =8
+
+                Rectangle8_9 As rectangle:
+                    BorderStyle: =BorderStyle.Dotted
+                    BorderThickness: =3
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =440
+                    Width: =586
+                    ZIndex: =1
+
+                Rectangle8_10 As rectangle:
+                    BorderStyle: =BorderStyle.Dotted
+                    BorderThickness: =2
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =1
+                    Width: =585
+                    Y: =86
+                    ZIndex: =2
+
+                Label15_7 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =86
+                    Size: =16
+                    Text: |-
+                        ="Cartucho de Tinta: "
+                    Width: =212
+                    ZIndex: =3
+
+                Label15_8 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =87
+                    Size: =16
+                    Text: |-
+                        ="Cabezal de Impresión:"
+                    Width: =212
+                    Y: =86
+                    ZIndex: =4
+
+                Label15_9 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =87
+                    Size: =16
+                    Text: |-
+                        ="Bandeja de Salida:"
+                    Width: =212
+                    Y: =174
+                    ZIndex: =5
+
+                Label15_10 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =87
+                    Size: =16
+                    Text: |-
+                        ="Soporte de Papel:"
+                    Width: =211
+                    Y: =265
+                    ZIndex: =6
+
+                Label15_11 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =87
+                    Size: =16
+                    Text: ="Panel de Control"
+                    Width: =211
+                    Y: =353
+                    ZIndex: =7
+
+                Rectangle8_11 As rectangle:
+                    BorderStyle: =BorderStyle.Dotted
+                    BorderThickness: =2
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =1
+                    Width: =586
+                    Y: =173
+                    ZIndex: =10
+
+                Rectangle8_12 As rectangle:
+                    BorderStyle: =BorderStyle.Dotted
+                    BorderThickness: =2
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =1
+                    Width: =586
+                    Y: =264
+                    ZIndex: =11
+
+                Rectangle8_13 As rectangle:
+                    BorderStyle: =BorderStyle.Dotted
+                    BorderThickness: =2
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =1
+                    Width: =586
+                    Y: =350
+                    ZIndex: =12
+
+                Select_Cartucho As radio:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Height: =86
+                    Items: =["Operativo","Inoperativo"]
+                    Layout: =Layout.Horizontal
+                    RadioSize: =50
+                    Reset: =resetearControlesBaja
+                    Size: =16
+                    Width: =375
+                    X: =211
+                    ZIndex: =15
+
+                Select_Cabezal As radio:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Height: =72
+                    Items: =["Operativo","Inoperativo"]
+                    Layout: =Layout.Horizontal
+                    RadioSize: =50
+                    Reset: =resetearControlesBaja
+                    Size: =16
+                    Width: =375
+                    X: =211
+                    Y: =94
+                    ZIndex: =16
+
+                Select_BandejaSalida As radio:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Height: =72
+                    Items: =["Operativo","Inoperativo"]
+                    Layout: =Layout.Horizontal
+                    RadioSize: =50
+                    Reset: =resetearControlesBaja
+                    Size: =16
+                    Width: =374
+                    X: =212
+                    Y: =186
+                    ZIndex: =17
+
+                Select_SoportePapel As radio:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Height: =72
+                    Items: =["Operativo","Inoperativo"]
+                    Layout: =Layout.Horizontal
+                    RadioSize: =50
+                    Reset: =resetearControlesBaja
+                    Size: =16
+                    Width: =374
+                    X: =212
+                    Y: =274
+                    ZIndex: =18
+
+                Select_PanelControl As radio:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Height: =72
+                    Items: =["Operativo","Inoperativo"]
+                    Layout: =Layout.Horizontal
+                    RadioSize: =50
+                    Reset: =resetearControlesBaja
+                    Size: =16
+                    Width: =374
+                    X: =212
+                    Y: =362
+                    ZIndex: =19
+
+                Rectangle8_16 As rectangle:
+                    BorderStyle: =BorderStyle.Dotted
+                    BorderThickness: =2
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =440
+                    Width: =1
+                    X: =211
+                    ZIndex: =22
+
+            Registrar_Baja As button:
+                Fill: =RGBA(0, 13, 75, 1)
+                Height: =70
+                OnSelect: |-
+                    =Patch(FICHAS_BAJAS,Defaults(FICHAS_BAJAS),{VISITA_TECNICA:varFichaTecnica.ID,MEDIO:varFichaTecnica.MEDIO,NOFICIO:N_Oficio_validar.Text,LOCAL:varFichaTecnica.LOCAL,FACULTAD:varFichaTecnica.FACULTAD,OFICINA:varFichaTecnica.OFICINA,NOMBRE_OFICINA:varFichaTecnica.NOMBRE_OFICINA,BIEN_INFORMATICO:varFichaTecnica.BIEN_INFORMATICO,PATRIMONIO:varFichaTecnica.PATRIMONIO,MARCA:varFichaTecnica.MARCA,MODELO:varFichaTecnica.MODELO,SERIE:varFichaTecnica.SERIE,CREADO_POR:User().FullName,TECNICO:Tecnico_Responsable.Selected.Nombre,RESPONSABLE:varFichaTecnica.RESPONSABLE,CORREO:varFichaTecnica.CORREO,DIAGNOSTICO:varFichaTecnica.DIAGNOSTICO,FALLA:varFichaTecnica.FALLA,SUGERENCIA:Input_Sugerencia.Text,FECHA:Fecha_Baja.SelectedDate,D_DURO:Select_DiscoDuro.Selected.Value,MEMORIA:Select_Memoria.Selected.Value,PLACA:Select_PlacaMain.Selected.Value,TARJ_VIDEO:Select_TVideo.Selected.Value,TARJ_RED:Select_TRed.Selected.Value,FUENTE_P:Select_FPoder.Selected.Value,LECTORA:Select_Lectora.Selected.Value,CARTUCHO:Select_Cartucho.Selected.Value,CABEZAL:Select_Cabezal.Selected.Value,BANDEJA:Select_BandejaSalida.Selected.Value,SOPORTE_PAPEL:Select_SoportePapel.Selected.Value,PANEL_CTRL:Select_PanelControl.Selected.Value});UpdateContext({resetearControlesBaja:true});UpdateContext({resetearControlesBaja:false});Navigate(Lista_Fichas_Bajas,ScreenTransition.Fade);Reset(BuscarFichaBaja)
+                Size: =17
+                Text: ="Registrar Ficha Baja"
+                Width: =340
+                X: =149
+                Y: =1403
+                ZIndex: =9
+
+            Input_Sugerencia As text:
+                Default: =""
+                Height: =204
+                Mode: =TextMode.MultiLine
+                Reset: =resetearControlesBaja
+                Size: =16
+                Width: =570
+                X: =43
+                Y: =1134
+                ZIndex: =10
+
+            Label25 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =70
+                Size: =18
+                Text: |-
+                    ="Sugerencia: "
+                Width: =180
+                X: =27
+                Y: =1051
+                ZIndex: =11
+
+            Label25_1 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =70
+                Size: =18
+                Text: |-
+                    ="Fecha: "
+                Width: =180
+                X: =27
+                Y: =981
+                ZIndex: =12
+
+            Fecha_Baja As datepicker:
+                Height: =44
+                Size: =18
+                Width: =286
+                X: =282
+                Y: =994
+                ZIndex: =13
+
+            Label25_2 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =82
+                Size: =18
+                Text: |-
+                    ="Técnico Responsable: "
+                Width: =222
+                X: =27
+                Y: =830
+                ZIndex: =14
+
+            Tecnico_Responsable As dropdown:
+                Height: =44
+                Items: =TECNICOS
+                Reset: =resetearControlesBaja
+                Size: =15
+                Width: =379
+                X: =234
+                Y: =857
+                ZIndex: =15
+
+            Label25_3 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =70
+                Size: =18
+                Text: |-
+                    ="Oficio N°: "
+                Width: =180
+                X: =27
+                Y: =924
+                ZIndex: =16
+
+            N_Oficio_validar As text:
+                Default: =varFichaTecnica.NOFICIO
+                Height: =44
+                Mode: =TextMode.MultiLine
+                Reset: =resetearControlesBaja
+                Size: =16
+                Width: =379
+                X: =234
+                Y: =937
+                ZIndex: =17
+
+    Label6_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =68
+        Size: =27
+        Text: ="Validar Componentes"
+        Width: =494
+        X: =101
+        Y: =13
+        ZIndex: =4
+
+    Icon16_1 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: |-
+            =UpdateContext({resetearControlesBaja:true});UpdateContext({resetearControlesBaja:false});Navigate(Detalle_Ficha_Tecnica,ScreenTransition.Fade)
+        Width: =86
+        X: =15
+        Y: =13
+        ZIndex: =5
+

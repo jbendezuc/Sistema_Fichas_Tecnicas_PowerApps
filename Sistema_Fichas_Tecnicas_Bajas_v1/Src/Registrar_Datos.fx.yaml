@@ -1,0 +1,588 @@
+Registrar_Datos As screen:
+    BackgroundImage: ='Cocoaa Ice'
+    Fill: =RGBA(0, 0, 0, 0)
+    ImagePosition: =ImagePosition.Stretch
+
+    Canvas2 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =1134
+        Width: =640
+        Y: =2
+        ZIndex: =1
+
+        DataCard5 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =2907
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Label1 As label:
+                Height: =51
+                Size: =17
+                Text: |-
+                    ="Local:"
+                Width: =221
+                X: =28
+                Y: =89
+                ZIndex: =1
+
+            Label1_1 As label:
+                Height: =51
+                Size: =17
+                Text: |-
+                    ="Facultad:"
+                Width: =221
+                X: =28
+                Y: =168
+                ZIndex: =2
+
+            Local As dropdown:
+                Height: =51
+                Items: |-
+                    =ForAll(Distinct(LOCAL_SEDE,LOCAL), {Result: ThisRecord.Value}).Result
+                Reset: =resetearControles
+                Size: =18
+                Width: =350
+                X: =257
+                Y: =89
+                ZIndex: =3
+
+            Facultad As dropdown:
+                Height: =51
+                Items: =Filter(LOCAL_SEDE,LOCAL=Local.Selected.Result)
+                Reset: =resetearControles
+                Size: =18
+                Width: =350
+                X: =257
+                Y: =168
+                ZIndex: =4
+
+            Label1_2 As label:
+                Height: =46
+                Size: =17
+                Text: |-
+                    ="Oficina:"
+                Width: =144
+                X: =28
+                Y: =238
+                ZIndex: =5
+
+            Label1_3 As label:
+                Height: =42
+                Size: =17
+                Text: |-
+                    ="Bien Informatico:"
+                Width: =264
+                X: =28
+                Y: =386
+                ZIndex: =6
+
+            Oficina As dropdown:
+                Height: =51
+                Items: =OFICINAS
+                Reset: =resetearControles
+                Size: =17
+                Width: =350
+                X: =257
+                Y: =238
+                ZIndex: =7
+
+            Marca As dropdown:
+                Height: =43
+                Items: |-
+                    =ForAll(Distinct(MODELO_MARCA,MARCA), {Result: ThisRecord.Value}).Result
+                Reset: =resetearControles
+                Size: =12
+                Width: =162
+                X: =118
+                Y: =437
+                ZIndex: =8
+
+            Label1_4 As label:
+                Height: =52
+                Size: =17
+                Text: |-
+                    ="Patrimonio:"
+                Width: =144
+                X: =28
+                Y: =496
+                ZIndex: =9
+
+            Label1_5 As label:
+                Height: =47
+                Size: =17
+                Text: |-
+                    ="Serie:"
+                Width: =77
+                X: =341
+                Y: =496
+                ZIndex: =10
+
+            Label1_6 As label:
+                Height: =55
+                Size: =17
+                Text: |-
+                    ="Técnico:"
+                Width: =195
+                X: =28
+                Y: =567
+                ZIndex: =11
+
+            Label1_7 As label:
+                Height: =55
+                Size: =17
+                Text: |-
+                    ="Diagnostico:"
+                Width: =282
+                X: =28
+                Y: =992
+                ZIndex: =12
+
+            Diagnostico As text:
+                Align: =Align.Justify
+                Default: =""
+                Height: =154
+                Mode: =TextMode.MultiLine
+                Reset: =resetearControles
+                Size: =16
+                Width: =572
+                X: =37
+                Y: =1046
+                ZIndex: =13
+
+            Patrimonio As text:
+                Default: =""
+                Height: =54
+                Reset: =resetearControles
+                Size: =17
+                Width: =165
+                X: =176
+                Y: =496
+                ZIndex: =14
+
+            Serie As text:
+                Default: =""
+                Height: =54
+                Reset: =resetearControles
+                Size: =17
+                Width: =189
+                X: =418
+                Y: =496
+                ZIndex: =15
+
+            Label1_8 As label:
+                Height: =55
+                Size: =17
+                Text: |-
+                    ="Falla Detectada:"
+                Width: =282
+                X: =28
+                Y: =1193
+                ZIndex: =16
+
+            Falla As text:
+                Align: =Align.Justify
+                Default: =""
+                Height: =141
+                Mode: =TextMode.MultiLine
+                Reset: =resetearControles
+                Size: =16
+                Width: =566
+                X: =43
+                Y: =1239
+                ZIndex: =17
+
+            Fecha As datepicker:
+                Height: =47
+                Reset: =resetearControles
+                Size: =18
+                Width: =302
+                X: =301
+                Y: =991
+                ZIndex: =18
+
+            Button1 As button:
+                Fill: =RGBA(150, 163, 109, 1)
+                Height: =49
+                OnSelect: |-
+                    =Set(var_firma_responsable,JSON(Firma_Responsable.Image,JSONFormat.IncludeBinaryData));
+                    Set(var_firma_tecnico,JSON(Firma_Tecnico.Image,JSONFormat.IncludeBinaryData));
+                    Set(var_foto,JSON(UploadedImage2.Image,JSONFormat.IncludeBinaryData));
+                    
+                    Patch(FICHAS_TECNICAS,Defaults(FICHAS_TECNICAS),{LOCAL:Local.Selected.Result,FACULTAD:Facultad.Selected.SEDE,NOMBRE_OFICINA:Nombre_Oficina.Text,BIEN_INFORMATICO:Bien_Informatico.Selected.BIEN_INFORMATICO,OFICINA:Oficina.Selected.OFICINA,PATRIMONIO:Patrimonio.Text,MARCA:Marca.Selected.Result,MODELO:Modelo.Selected.MODELO,SERIE:Serie.Text,TECNICO:Tecnico.Text,RESPONSABLE:Responsable.Text,ASUNTO:Asunto.Selected.SERVICIO,FECHA:Fecha.SelectedDate,MEDIO:Medio_Informativo.Selected.MEDIO_INFORMATIVO,NOFICIO:Noficio.Text,DIAGNOSTICO:Diagnostico.Text,FALLA:Falla.Text,OBSERVACION:Observacion.Text,ESTADO:{Value:"Nuevo"},CORREO:Correo.Text,IMAGEN:Text(var_foto),FIRMATECNICO:Text(var_firma_tecnico),FIRMARESPONSABLE:Text(var_firma_responsable)});UpdateContext({resetearControles:true});UpdateContext({resetearControles:false});Navigate(Validacion_Correcta_FT,ScreenTransition.UnCoverRight);Reset(BuscarFichaTecnica)
+                Size: =24
+                Text: ="Guardar"
+                Width: =355
+                X: =135
+                Y: =2698
+                ZIndex: =20
+
+            Label1_9 As label:
+                Height: =75
+                Size: =17
+                Text: |-
+                    ="Asunto /Servicio:"
+                Width: =118
+                X: =28
+                Y: =780
+                ZIndex: =21
+
+            Label1_10 As label:
+                Height: =43
+                Size: =17
+                Text: |-
+                    ="Marca:"
+                Width: =97
+                X: =28
+                Y: =437
+                ZIndex: =23
+
+            Label1_11 As label:
+                Height: =43
+                Size: =17
+                Text: |-
+                    ="Modelo:"
+                Width: =97
+                X: =282
+                Y: =436
+                ZIndex: =24
+
+            Modelo As dropdown:
+                Height: =44
+                Items: =Filter(MODELO_MARCA,MARCA=Marca.Selected.Result)
+                Reset: =resetearControles
+                Size: =12
+                Width: =225
+                X: =383
+                Y: =436
+                ZIndex: =25
+
+            Label1_12 As label:
+                Height: =46
+                Size: =17
+                Text: |-
+                    ="Responsable:"
+                Width: =156
+                X: =28
+                Y: =647
+                ZIndex: =26
+
+            Responsable As text:
+                Default: =""
+                Height: =51
+                Reset: =resetearControles
+                Size: =17
+                Width: =427
+                X: =181
+                Y: =638
+                ZIndex: =27
+
+            Label1_13 As label:
+                Height: =55
+                Size: =17
+                Text: |-
+                    ="Observaciones:"
+                Width: =282
+                X: =28
+                Y: =1392
+                ZIndex: =29
+
+            Observacion As text:
+                Default: =""
+                Height: =180
+                Mode: =TextMode.MultiLine
+                Reset: =resetearControles
+                Size: =16
+                Width: =560
+                X: =43
+                Y: =1447
+                ZIndex: =30
+
+            Firma_Tecnico As inkControl:
+                Height: =224
+                Reset: =resetearControles
+                ShowControls: =false
+                Width: =291
+                X: =321
+                Y: =2188
+                ZIndex: =31
+
+            Firma_Responsable As inkControl:
+                Height: =224
+                Reset: =resetearControles
+                ShowControls: =false
+                Width: =291
+                X: =19
+                Y: =2188
+                ZIndex: =32
+
+            Label4 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =59
+                Size: =18
+                Text: ="Firma Tecnico"
+                Width: =208
+                X: =362
+                Y: =2427
+                ZIndex: =33
+
+            Label4_1 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =58
+                Size: =18
+                Text: ="Firma Responsable"
+                Width: =254
+                X: =37
+                Y: =2427
+                ZIndex: =34
+
+            Label4_2 As label:
+                Align: =Align.Center
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =58
+                Size: =18
+                Text: =Tecnico.Text
+                Width: =290
+                X: =328
+                Y: =2485
+                ZIndex: =35
+
+            Label4_3 As label:
+                Align: =Align.Center
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =57
+                Size: =18
+                Text: =Responsable.Text
+                Width: =289
+                X: =21
+                Y: =2486
+                ZIndex: =36
+
+            Icon2 As icon.Erase:
+                Icon: =Icon.Erase
+                OnSelect: =Reset(Firma_Tecnico)
+                X: =418
+                Y: =2591
+                ZIndex: =39
+
+            Icon6 As icon.Erase:
+                Icon: =Icon.Erase
+                OnSelect: =Reset(Firma_Responsable)
+                X: =86
+                Y: =2591
+                ZIndex: =40
+
+            Rectangle2 As rectangle:
+                Fill: =RGBA(9, 33, 98, 1)
+                Width: =639
+                X: =1
+                Y: =2807
+                ZIndex: =41
+
+            Label5 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =70
+                Size: =21
+                Text: ="OCGTI APP - UNFV "
+                Width: =560
+                X: =19
+                Y: =2823
+                ZIndex: =42
+
+            Label1_14 As label:
+                Height: =55
+                Size: =17
+                Text: |-
+                    ="Medio:"
+                Width: =118
+                X: =28
+                Y: =850
+                ZIndex: =43
+
+            Medio_Informativo As dropdown:
+                Height: =51
+                Items: =MEDIOS_INFORMATIVOS
+                Reset: =resetearControles
+                Size: =17
+                Width: =429
+                X: =180
+                Y: =850
+                ZIndex: =44
+
+            Label1_15 As label:
+                Height: =59
+                Size: =17
+                Text: |-
+                    ="Nombre de la Oficina:"
+                Width: =144
+                X: =32
+                Y: =305
+                ZIndex: =45
+
+            Nombre_Oficina As text:
+                Default: =""
+                Height: =51
+                Reset: =resetearControles
+                Size: =17
+                Width: =350
+                X: =257
+                Y: =305
+                ZIndex: =46
+
+            Bien_Informatico As dropdown:
+                Height: =51
+                Items: =BIENES_INFORMATICOS
+                Reset: =resetearControles
+                Size: =17
+                Width: =350
+                X: =257
+                Y: =373
+                ZIndex: =47
+
+            Label1_16 As label:
+                Height: =70
+                Size: =17
+                Text: |-
+                    ="Correo 
+                    Responsable:"
+                Width: =152
+                X: =32
+                Y: =697
+                ZIndex: =48
+
+            Correo As text:
+                Default: =""
+                Height: =51
+                Reset: =resetearControles
+                Size: =18
+                Width: =430
+                X: =180
+                Y: =708
+                ZIndex: =49
+
+            Asunto As dropdown:
+                Height: =51
+                Items: =SERVICIOS
+                Reset: =resetearControles
+                Size: =17
+                Width: =429
+                X: =181
+                Y: =785
+                ZIndex: =50
+
+            Label11 As label:
+                Height: =50
+                Size: =17
+                Text: |-
+                    ="Adjunte Foto (Horizontal):"
+                Width: =560
+                X: =23
+                Y: =1655
+                ZIndex: =54
+
+            AddMediaWithImage2 As group:
+                Height: =5
+                Width: =5
+                X: =-20
+                Y: =-20
+                ZIndex: =55
+
+                UploadedImage2 As image:
+                    Height: =AddMediaButton2.Height
+                    Image: =If(IsBlank(AddMediaButton2.Media), SampleImage, AddMediaButton2.Media)
+                    ImagePosition: =ImagePosition.Fill
+                    Width: =AddMediaButton2.Width
+                    X: =AddMediaButton2.X
+                    Y: =1721
+                    ZIndex: =56
+
+                AddMediaButton2 As addMedia:
+                    Height: =432
+                    Reset: =resetearControles
+                    Size: =25
+                    Width: =575
+                    X: =24
+                    Y: =1721
+                    ZIndex: =57
+
+            Icon19_1 As icon.History:
+                DisplayMode: =DisplayMode.View
+                Icon: =Icon.History
+                Rotation: =180
+                X: =341
+                Y: =1639
+                ZIndex: =58
+
+            Label1_35 As label:
+                Height: =55
+                Size: =17
+                Text: ="Doc. Nº"
+                Width: =118
+                X: =28
+                Y: =920
+                ZIndex: =59
+
+            Noficio As text:
+                Default: =""
+                DisplayMode: =If(Medio_Informativo.SelectedText.MEDIO_INFORMATIVO = "Oficio" || Medio_Informativo.SelectedText.MEDIO_INFORMATIVO = "Proveído",DisplayMode.Edit,DisplayMode.Disabled)
+                Height: =51
+                Reset: =resetearControles
+                Size: =18
+                Width: =430
+                X: =180
+                Y: =924
+                ZIndex: =60
+
+            Tecnico As text:
+                Default: =User().FullName
+                DisplayMode: =DisplayMode.View
+                Height: =51
+                Size: =17
+                Width: =427
+                X: =184
+                Y: =569
+                ZIndex: =61
+
+    RectQuickActionBar1_1 As rectangle:
+        Fill: =RGBA(9, 33, 98, 1)
+        Height: =76
+        Width: =640
+        ZIndex: =2
+
+    Icon1 As icon.Notebook:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =49
+        Icon: =Icon.Notebook
+        Width: =57
+        X: =505
+        Y: =17
+        ZIndex: =4
+
+    Label2 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =72
+        Size: =21
+        Text: ="REGISTRO VISITA TÉCNICA"
+        Width: =535
+        X: =40
+        ZIndex: =5
+
+    Icon10 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: |-
+            =Navigate(Portada,ScreenTransition.CoverRight);UpdateContext({resetearControles:true});UpdateContext({resetearControles:false})
+        X: =27
+        Y: =7
+        ZIndex: =6
+

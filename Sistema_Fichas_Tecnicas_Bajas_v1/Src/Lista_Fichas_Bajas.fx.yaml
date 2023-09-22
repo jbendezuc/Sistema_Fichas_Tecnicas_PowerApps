@@ -1,0 +1,211 @@
+"Lista_Fichas_Bajas As screen.'phoneLayout_HeaderAndGallery_ver3.0'":
+    Fill: =RGBA(232, 244, 217, 1)
+
+    RectQuickActionBar3 As rectangle:
+        Fill: =RGBA(9, 33, 98, 1)
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    LblAppName3 As label:
+        Height: =88
+        Size: =27
+        Text: ="[Título]"
+        Width: =
+        Wrap: =false
+        X: =20
+        ZIndex: =2
+
+    BuscarFichaBaja As text:
+        Align: =TextPosition.Left
+        Default: =""
+        Height: =68
+        HintText: |-
+            ="Busca por N° #/ Fecha/ Patrimonio"
+        PaddingLeft: =70
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =7
+        RadiusTopLeft: =0
+        RadiusTopRight: =7
+        Size: =21
+        Width: =Parent.Width
+        Y: =RectQuickActionBar3.Height
+        ZIndex: =6
+
+    SearchIcon1 As icon.Search:
+        Height: =SearchIcon1.Width
+        Icon: =Icon.Search
+        PaddingBottom: =14
+        PaddingLeft: =14
+        PaddingRight: =14
+        PaddingTop: =14
+        Tooltip: ="Buscar"
+        Width: =BuscarFichaBaja.Height
+        X: =BuscarFichaBaja.X
+        Y: =BuscarFichaBaja.Y
+        ZIndex: =7
+
+    Rectangle11 As rectangle:
+        Height: =2
+        Width: =Parent.Width
+        Y: =BuscarFichaBaja.Y + BuscarFichaBaja.Height
+        ZIndex: =8
+
+    "BrowseGallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =Parent.Height - BrowseGallery1.Y
+        Items: |-
+            =If(
+                !IsBlank(Tecnico_campoBaja.Text) && IsBlank(BuscarFichaBaja.Text),
+                Sort(Filter(
+                    FICHAS_BAJAS,
+                    StartsWith(TECNICO,Tecnico_campoBaja.Text) || StartsWith(CREADO_POR,Tecnico_campoBaja.Text)
+                ),ID,SortOrder.Descending),
+                !IsBlank(Tecnico_campoBaja.Text) && !IsBlank(BuscarFichaBaja.Text),
+                Sort(Filter(
+                    FICHAS_BAJAS,
+                    StartsWith(TECNICO,Tecnico_campoBaja.Text) || StartsWith(CREADO_POR,Tecnico_campoBaja.Text),
+                    StartsWith(FECHA,BuscarFichaBaja.Text) || StartsWith(PATRIMONIO,BuscarFichaBaja.Text) || StartsWith(ID,BuscarFichaBaja.Text)
+                ),ID,SortOrder.Descending),
+                FICHAS_BAJAS
+            )
+        Layout: =Layout.Vertical
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =201
+        Width: =Parent.Width
+        Y: =BuscarFichaBaja.Y + BuscarFichaBaja.Height
+        ZIndex: =9
+
+        Image5 As image:
+            Height: =128
+            Image: =logo_unfv_1
+            OnSelect: =Select(Parent)
+            Width: =128
+            X: =16
+            Y: =40
+            ZIndex: =1
+
+        Title1 As label:
+            Align: =Align.Center
+            Height: =39
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =ThisItem.TECNICO
+            VerticalAlign: =VerticalAlign.Top
+            Width: =361
+            X: =202
+            Y: =78
+            ZIndex: =2
+
+        NextArrow1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =65
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent);Navigate(Detalle_Ficha_Baja);Set(varFichaBaja,ThisItem)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="Ver los detalles del elemento"
+            Width: =72
+            X: =563
+            Y: =80
+            ZIndex: =4
+
+        Separator1 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+        NFicha_Baja As label:
+            Align: =Align.Center
+            BorderThickness: =2
+            FontWeight: =FontWeight.Bold
+            Height: =46
+            Size: =21
+            Text: ="Ficha de Baja N° "&ThisItem.ID
+            Width: =385
+            X: =127
+            Y: =19
+            ZIndex: =7
+
+        Label30 As label:
+            Align: =Align.Center
+            Height: =41
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =ThisItem.FECHA
+            Width: =228
+            X: =284
+            Y: =111
+            ZIndex: =8
+
+        Label31 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =59
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: |-
+                ="Patrimonio: "&ThisItem.PATRIMONIO
+            Width: =288
+            X: =294
+            Y: =135
+            ZIndex: =9
+
+        Label32 As label:
+            Height: =59
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =ThisItem.FACULTAD
+            Width: =166
+            X: =82
+            Y: =145
+            ZIndex: =10
+
+        Label33 As label:
+            Height: =52
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =ThisItem.LOCAL
+            Width: =84
+            X: =60
+            Y: =116
+            ZIndex: =11
+
+    Label10_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =27
+        Text: ="FICHAS DE BAJA"
+        Width: =347
+        X: =172
+        Y: =11
+        ZIndex: =11
+
+    Arrow1_1 As arrow.backArrow:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =66
+        OnSelect: =Navigate(Portada,ScreenTransition.CoverRight)
+        Width: =66
+        X: =20
+        Y: =11
+        ZIndex: =12
+
+    Tecnico_campoBaja As text:
+        Default: =User().FullName
+        Height: =70
+        Size: =21
+        Visible: =false
+        Width: =560
+        X: =40
+        Y: =158
+        ZIndex: =13
+

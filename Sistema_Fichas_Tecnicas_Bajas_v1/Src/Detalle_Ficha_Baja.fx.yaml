@@ -1,0 +1,636 @@
+Detalle_Ficha_Baja As screen:
+    BackgroundImage: =
+    Fill: =RGBA(232, 244, 217, 1)
+    ImagePosition: =ImagePosition.Fill
+
+    Rectangle1_5 As rectangle:
+        Fill: =RGBA(9, 33, 98, 1)
+        Height: =89
+        Width: =640
+        ZIndex: =3
+
+    Label6_4 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =68
+        Size: =27
+        Text: ="Detalle de Ficha de Baja"
+        Width: =494
+        X: =101
+        Y: =11
+        ZIndex: =4
+
+    Icon16_3 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(Lista_Fichas_Bajas,ScreenTransition.Fade)
+        Width: =86
+        X: =15
+        Y: =11
+        ZIndex: =5
+
+    Canvas3_1 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =1047
+        Width: =Parent.Width
+        Y: =89
+        ZIndex: =8
+
+        DataCard2_1 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =1829
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Rectangle10_14 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =2
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =1443
+                Width: =568
+                X: =31
+                Y: =56
+                ZIndex: =1
+
+            Button5_3 As button:
+                Fill: =RGBA(9, 33, 98, 1)
+                Height: =52
+                OnSelect: =Navigate(Actualizar_Ficha_Baja,ScreenTransition.Fade)
+                Size: =17
+                Text: ="Editar Ficha de Baja"
+                Width: =310
+                X: =188
+                Y: =1539
+                ZIndex: =2
+
+            Icon13_3 As icon.Send:
+                Height: =58
+                Icon: =Icon.ColorPicker
+                Width: =56
+                X: =111
+                Y: =1632
+                ZIndex: =3
+
+            Button5_4 As button:
+                Fill: =RGBA(9, 33, 98, 1)
+                Height: =52
+                OnSelect: =Navigate(Ficha_Baja,ScreenTransition.Fade)
+                Size: =17
+                Text: ="Generar Ficha de Baja"
+                Width: =310
+                X: =188
+                Y: =1638
+                ZIndex: =4
+
+            Label17_3 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =46
+                Size: =16
+                Text: ="FICHA DE BAJA Nº "&varFichaBaja.ID&" - "&varFichaBaja.LOCAL&" - "&varFichaBaja.FECHA
+                Width: =544
+                X: =55
+                Y: =10
+                ZIndex: =5
+
+            Label18_13 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =39
+                Size: =14
+                Text: |-
+                    ="Local:"
+                Width: =227
+                X: =31
+                Y: =56
+                ZIndex: =7
+
+            Label18_14 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =39
+                Size: =14
+                Text: |-
+                    ="Facultad:"
+                Width: =227
+                X: =31
+                Y: =95
+                ZIndex: =8
+
+            Label18_15 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =39
+                Size: =14
+                Text: |-
+                    ="Oficina:"
+                Width: =227
+                X: =31
+                Y: =134
+                ZIndex: =9
+
+            Label18_16 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =44
+                Size: =14
+                Text: |-
+                    ="Descripcion del Bien:"
+                Width: =227
+                X: =31
+                Y: =225
+                ZIndex: =10
+
+            Label18_17 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =45
+                Size: =14
+                Text: |-
+                    ="Patrimonio:"
+                Width: =227
+                X: =31
+                Y: =279
+                ZIndex: =11
+
+            Label18_18 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =44
+                Size: =14
+                Text: |-
+                    ="Serie:"
+                Width: =227
+                X: =31
+                Y: =425
+                ZIndex: =12
+
+            Label18_19 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =54
+                Size: =14
+                Text: |-
+                    ="Responsable:"
+                Width: =227
+                X: =31
+                Y: =471
+                ZIndex: =13
+
+            Label18_22 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =44
+                Size: =14
+                Text: |-
+                    ="Diagnostico:"
+                Width: =249
+                X: =31
+                Y: =904
+                ZIndex: =14
+
+            Label18_23 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =44
+                Size: =14
+                Text: |-
+                    ="Falla:"
+                Width: =249
+                X: =31
+                Y: =1140
+                ZIndex: =15
+
+            Label18_24 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =81
+                Size: =14
+                Text: |-
+                    ="Sugerencia:"
+                Width: =174
+                X: =31
+                Y: =1346
+                ZIndex: =16
+
+            Image6_7 As image:
+                DisplayMode: =DisplayMode.View
+                Fill: =RGBA(0, 0, 0, 1)
+                Height: =93
+                Image: ='Logo-Personal'
+                ImagePosition: =ImagePosition.Fill
+                Width: =640
+                Y: =1736
+                ZIndex: =17
+
+            Label19_12 As label:
+                Height: =28
+                Size: =16
+                Text: =varFichaBaja.LOCAL
+                Width: =319
+                X: =280
+                Y: =56
+                ZIndex: =18
+
+            Label19_13 As label:
+                Height: =28
+                Size: =16
+                Text: =varFichaBaja.FACULTAD
+                Width: =319
+                X: =280
+                Y: =100
+                ZIndex: =19
+
+            Label19_14 As label:
+                Height: =28
+                Size: =16
+                Text: =varFichaBaja.OFICINA
+                Width: =319
+                X: =280
+                Y: =141
+                ZIndex: =20
+
+            Label19_15 As label:
+                Height: =28
+                Size: =16
+                Text: =varFichaBaja.BIEN_INFORMATICO
+                Width: =319
+                X: =280
+                Y: =233
+                ZIndex: =21
+
+            Label19_16 As label:
+                Height: =28
+                Size: =16
+                Text: =varFichaBaja.PATRIMONIO
+                Width: =319
+                X: =280
+                Y: =285
+                ZIndex: =22
+
+            Label19_17 As label:
+                Height: =28
+                Size: =16
+                Text: =varFichaBaja.SERIE
+                Width: =319
+                X: =280
+                Y: =427
+                ZIndex: =23
+
+            Label19_18 As label:
+                Height: =55
+                Size: =16
+                Text: =varFichaBaja.RESPONSABLE
+                Width: =319
+                X: =280
+                Y: =473
+                ZIndex: =24
+
+            Label19_21 As label:
+                Height: =318
+                Size: =16
+                Text: =varFichaBaja.DIAGNOSTICO
+                Width: =432
+                X: =167
+                Y: =791
+                ZIndex: =25
+
+            Label19_22 As label:
+                Height: =180
+                Size: =16
+                Text: =varFichaTecnica.FALLA
+                Width: =432
+                X: =167
+                Y: =1109
+                ZIndex: =26
+
+            Label19_23 As label:
+                Height: =200
+                Size: =16
+                Text: =varFichaTecnica.OBSERVACION
+                Width: =432
+                X: =167
+                Y: =1291
+                ZIndex: =27
+
+            Rectangle10_15 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =95
+                ZIndex: =28
+
+            Rectangle10_16 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =134
+                ZIndex: =29
+
+            Rectangle10_17 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =171
+                ZIndex: =30
+
+            Rectangle10_18 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =277
+                ZIndex: =31
+
+            Rectangle10_19 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =323
+                ZIndex: =32
+
+            Rectangle10_20 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =469
+                ZIndex: =33
+
+            Rectangle10_21 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =523
+                ZIndex: =34
+
+            Rectangle10_24 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =1109
+                ZIndex: =35
+
+            Rectangle10_25 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =1289
+                ZIndex: =36
+
+            Icon11_1 As icon.Edit:
+                Height: =44
+                Icon: =Icon.Edit
+                Width: =46
+                X: =121
+                Y: =1540
+                ZIndex: =37
+
+            Label18_26 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =46
+                Size: =15
+                Text: |-
+                    =varFichaBaja.MEDIO&" N° :"
+                Width: =249
+                X: =31
+                Y: =530
+                ZIndex: =42
+
+            Label19_19 As label:
+                Height: =44
+                Size: =16
+                Text: =varFichaBaja.NOFICIO
+                Width: =319
+                X: =280
+                Y: =532
+                ZIndex: =43
+
+            Rectangle10_22 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =370
+                ZIndex: =44
+
+            Rectangle10_23 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =420
+                ZIndex: =45
+
+            Label18_25 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =44
+                Size: =14
+                Text: |-
+                    ="Marca:"
+                Width: =249
+                X: =31
+                Y: =326
+                ZIndex: =46
+
+            Label18_27 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =44
+                Size: =14
+                Text: |-
+                    ="Modelo:"
+                Width: =249
+                X: =31
+                Y: =376
+                ZIndex: =47
+
+            Label19_20 As label:
+                Height: =41
+                Size: =16
+                Text: =varFichaBaja.MARCA
+                Width: =319
+                X: =280
+                Y: =323
+                ZIndex: =48
+
+            Label19_24 As label:
+                Height: =41
+                Size: =16
+                Text: =varFichaBaja.MODELO
+                Width: =319
+                X: =280
+                Y: =376
+                ZIndex: =49
+
+            Rectangle10_26 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =582
+                ZIndex: =50
+
+            Rectangle10_27 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =642
+                ZIndex: =51
+
+            Label18_28 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =46
+                Size: =15
+                Text: |-
+                    ="N° Ficha Técnica:"
+                Width: =249
+                X: =31
+                Y: =592
+                ZIndex: =52
+
+            Label19_25 As label:
+                Height: =44
+                Size: =16
+                Text: =varFichaBaja.VISITA_TECNICA
+                Width: =319
+                X: =280
+                Y: =592
+                ZIndex: =53
+
+            Rectangle10_28 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =222
+                ZIndex: =54
+
+            Label18_20 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =39
+                Size: =14
+                Text: |-
+                    ="Nombre Oficina:"
+                Width: =227
+                X: =31
+                Y: =177
+                ZIndex: =55
+
+            Label19_26 As label:
+                Height: =39
+                Size: =16
+                Text: =varFichaBaja.NOMBRE_OFICINA
+                Width: =299
+                X: =280
+                Y: =177
+                ZIndex: =56
+
+            Rectangle10_29 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =711
+                ZIndex: =57
+
+            Rectangle10_30 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =789
+                ZIndex: =58
+
+            Label18_29 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =46
+                Size: =15
+                Text: |-
+                    ="Creado Por:"
+                Width: =249
+                X: =31
+                Y: =654
+                ZIndex: =59
+
+            Label18_30 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =46
+                Size: =15
+                Text: |-
+                    ="Técnico Responsable:"
+                Width: =249
+                X: =31
+                Y: =728
+                ZIndex: =60
+
+            Label19_27 As label:
+                Height: =44
+                Size: =16
+                Text: =varFichaBaja.CREADO_POR
+                Width: =319
+                X: =280
+                Y: =656
+                ZIndex: =61
+
+            Label19_28 As label:
+                Height: =44
+                Size: =16
+                Text: =varFichaBaja.TECNICO
+                Width: =319
+                X: =280
+                Y: =728
+                ZIndex: =62
+

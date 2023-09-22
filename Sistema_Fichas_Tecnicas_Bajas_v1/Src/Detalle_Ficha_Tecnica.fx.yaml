@@ -1,0 +1,592 @@
+Detalle_Ficha_Tecnica As screen:
+    BackgroundImage: =
+    Fill: =RGBA(232, 244, 217, 1)
+    ImagePosition: =ImagePosition.Fill
+
+    Rectangle1_4 As rectangle:
+        Fill: =RGBA(9, 33, 98, 1)
+        Height: =89
+        Width: =640
+        ZIndex: =3
+
+    Label6 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =68
+        Size: =27
+        Text: ="Detalle de Visita Técnica"
+        Width: =494
+        X: =101
+        Y: =11
+        ZIndex: =4
+
+    Icon16 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(Lista_Fichas_Tecnicas,ScreenTransition.Fade)
+        Width: =86
+        X: =15
+        Y: =11
+        ZIndex: =5
+
+    Canvas3 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =1047
+        Width: =Parent.Width
+        Y: =89
+        ZIndex: =8
+
+        DataCard2 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =1875
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Rectangle10_1 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =2
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =1434
+                Width: =568
+                X: =31
+                Y: =56
+                ZIndex: =1
+
+            Button5 As button:
+                Fill: =RGBA(9, 33, 98, 1)
+                Height: =52
+                OnSelect: =Navigate(Actualizar_Ficha_Tecnica,ScreenTransition.Fade);If((Len(varFichaTecnica.FIRMARESPONSABLE)) > 2336,Set(var_limpiar_img_RT,0),Set(var_limpiar_img_RT,1));If((Len(varFichaTecnica.FIRMATECNICO)) > 2336,Set(var_limpiar_img_FT,0),Set(var_limpiar_img_FT,1))
+                Size: =17
+                Text: ="Editar Ficha Técnica"
+                Width: =310
+                X: =188
+                Y: =1511
+                ZIndex: =2
+
+            Icon13_1 As icon.Send:
+                Height: =58
+                Icon: =Icon.ColorPicker
+                Width: =56
+                X: =111
+                Y: =1578
+                ZIndex: =3
+
+            Button5_1 As button:
+                Fill: =RGBA(9, 33, 98, 1)
+                Height: =52
+                OnSelect: =Navigate(Ficha_Tecnica,ScreenTransition.Fade);Set(visibleImage,true)
+                Size: =17
+                Text: ="Generar Ficha Técnica"
+                Width: =310
+                X: =188
+                Y: =1584
+                ZIndex: =4
+
+            Label17 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =38
+                Size: =16
+                Text: ="VISITA TÉCNICA Nº "
+                Width: =207
+                X: =138
+                Y: =18
+                ZIndex: =5
+
+            Label17_1 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =29
+                Size: =17
+                Text: =varFichaTecnica.ID
+                Width: =61
+                X: =410
+                Y: =22
+                ZIndex: =6
+
+            Label18 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =39
+                Size: =14
+                Text: |-
+                    ="Local:"
+                Width: =227
+                X: =31
+                Y: =56
+                ZIndex: =7
+
+            Label18_1 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =39
+                Size: =14
+                Text: |-
+                    ="Facultad:"
+                Width: =227
+                X: =31
+                Y: =95
+                ZIndex: =8
+
+            Label18_2 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =39
+                Size: =14
+                Text: |-
+                    ="Oficina:"
+                Width: =227
+                X: =31
+                Y: =134
+                ZIndex: =9
+
+            Label18_3 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =44
+                Size: =14
+                Text: |-
+                    ="Descripcion del Bien:"
+                Width: =227
+                X: =31
+                Y: =173
+                ZIndex: =10
+
+            Label18_4 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =45
+                Size: =14
+                Text: |-
+                    ="Patrimonio:"
+                Width: =227
+                X: =31
+                Y: =227
+                ZIndex: =11
+
+            Label18_5 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =44
+                Size: =14
+                Text: |-
+                    ="Serie:"
+                Width: =227
+                X: =31
+                Y: =273
+                ZIndex: =12
+
+            Label18_6 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =54
+                Size: =14
+                Text: |-
+                    ="Responsable:"
+                Width: =227
+                X: =31
+                Y: =319
+                ZIndex: =13
+
+            Label18_7 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =44
+                Size: =14
+                Text: |-
+                    ="Asunto/Servicio:"
+                Width: =249
+                X: =31
+                Y: =383
+                ZIndex: =14
+
+            Label18_8 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =44
+                Size: =14
+                Text: |-
+                    ="Diagnostico:"
+                Width: =249
+                X: =31
+                Y: =550
+                ZIndex: =15
+
+            Label18_9 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =44
+                Size: =14
+                Text: |-
+                    ="Falla:"
+                Width: =249
+                X: =31
+                Y: =816
+                ZIndex: =16
+
+            Label18_10 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =81
+                Size: =14
+                Text: |-
+                    ="Observacion/
+                    Recomendacion:"
+                Width: =174
+                X: =31
+                Y: =950
+                ZIndex: =17
+
+            Label18_11 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =44
+                Size: =14
+                Text: |-
+                    ="Foto:"
+                Width: =249
+                X: =31
+                Y: =1181
+                ZIndex: =18
+
+            Image6_3 As image:
+                DisplayMode: =DisplayMode.View
+                Fill: =RGBA(0, 0, 0, 1)
+                Height: =93
+                Image: ='Logo-Personal'
+                ImagePosition: =ImagePosition.Fill
+                Width: =640
+                Y: =1782
+                ZIndex: =19
+
+            Label19 As label:
+                Height: =28
+                Size: =16
+                Text: =varFichaTecnica.LOCAL
+                Width: =319
+                X: =280
+                Y: =56
+                ZIndex: =20
+
+            Label19_1 As label:
+                Height: =28
+                Size: =16
+                Text: =varFichaTecnica.FACULTAD
+                Width: =319
+                X: =280
+                Y: =100
+                ZIndex: =21
+
+            Label19_2 As label:
+                Height: =28
+                Size: =16
+                Text: =varFichaTecnica.OFICINA
+                Width: =319
+                X: =280
+                Y: =141
+                ZIndex: =22
+
+            Label19_3 As label:
+                Height: =28
+                Size: =16
+                Text: =varFichaTecnica.BIEN_INFORMATICO
+                Width: =319
+                X: =280
+                Y: =181
+                ZIndex: =23
+
+            Label19_4 As label:
+                Height: =28
+                Size: =16
+                Text: =varFichaTecnica.PATRIMONIO
+                Width: =319
+                X: =280
+                Y: =233
+                ZIndex: =24
+
+            Label19_5 As label:
+                Height: =28
+                Size: =16
+                Text: =varFichaTecnica.SERIE
+                Width: =319
+                X: =280
+                Y: =273
+                ZIndex: =25
+
+            Label19_6 As label:
+                Height: =55
+                Size: =16
+                Text: =varFichaTecnica.RESPONSABLE
+                Width: =319
+                X: =280
+                Y: =319
+                ZIndex: =26
+
+            Label19_7 As label:
+                Height: =46
+                Size: =16
+                Text: =varFichaTecnica.ASUNTO
+                Width: =319
+                X: =280
+                Y: =382
+                ZIndex: =27
+
+            Label19_8 As label:
+                Height: =285
+                Size: =14
+                Text: =varFichaTecnica.DIAGNOSTICO
+                Width: =432
+                X: =161
+                Y: =495
+                ZIndex: =28
+
+            Label19_9 As label:
+                Height: =166
+                Size: =14
+                Text: =varFichaTecnica.FALLA
+                Width: =432
+                X: =161
+                Y: =787
+                ZIndex: =29
+
+            Label19_10 As label:
+                Height: =164
+                Size: =16
+                Text: =varFichaTecnica.OBSERVACION
+                Width: =432
+                X: =167
+                Y: =1003
+                ZIndex: =30
+
+            Rectangle10 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderThickness: =2
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =267
+                Width: =360
+                X: =205
+                Y: =1204
+                ZIndex: =31
+
+            Image7 As image:
+                Height: =267
+                Image: =Substitute(varFichaTecnica.IMAGEN,"""","")
+                Width: =328
+                X: =227
+                Y: =1204
+                ZIndex: =32
+
+            Rectangle10_2 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =95
+                ZIndex: =33
+
+            Rectangle10_3 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =134
+                ZIndex: =34
+
+            Rectangle10_4 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =171
+                ZIndex: =35
+
+            Rectangle10_5 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =225
+                ZIndex: =36
+
+            Rectangle10_6 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =271
+                ZIndex: =37
+
+            Rectangle10_7 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =317
+                ZIndex: =38
+
+            Rectangle10_8 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =371
+                ZIndex: =39
+
+            Rectangle10_9 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =429
+                ZIndex: =40
+
+            Rectangle10_10 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =Label19_8.Height+500
+                ZIndex: =41
+
+            Rectangle10_11 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =Label19_9.Height+780
+                ZIndex: =42
+
+            Rectangle10_12 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =2
+                Width: =568
+                X: =31
+                Y: =1178
+                ZIndex: =43
+
+            Icon11 As icon.Edit:
+                Height: =44
+                Icon: =Icon.Edit
+                Width: =46
+                X: =121
+                Y: =1512
+                ZIndex: =44
+
+            Rectangle10_13 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =3
+                Width: =568
+                X: =31
+                Y: =480
+                ZIndex: =45
+
+            Label18_12 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =39
+                Size: =14
+                Text: |-
+                    ="Medio:"
+                Width: =227
+                X: =31
+                Y: =436
+                ZIndex: =46
+
+            Label19_11 As label:
+                AutoHeight: =true
+                Height: =103
+                Size: =16
+                Text: =varFichaTecnica.MEDIO
+                Width: =319
+                X: =280
+                Y: =438
+                ZIndex: =47
+
+            Icon13_2 As icon.Send:
+                Height: =58
+                Icon: =Icon.DockCheckProperties
+                Width: =56
+                X: =111
+                Y: =1692
+                ZIndex: =48
+
+            Button5_2 As button:
+                Fill: =RGBA(9, 33, 98, 1)
+                Height: =52
+                OnSelect: =Navigate(Validar_Componentes,ScreenTransition.Fade)
+                Size: =17
+                Text: ="Generar Ficha Baja"
+                Width: =310
+                X: =188
+                Y: =1695
+                ZIndex: =49
+
+            Label23 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =22
+                Size: =16
+                Text: =varFichaTecnica.LOCAL
+                Width: =74
+                X: =340
+                Y: =27
+                ZIndex: =50
+
+            Label24 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =24
+                Size: =21
+                Text: ="-"
+                Width: =31
+                X: =396
+                Y: =25
+                ZIndex: =51
+
+            Label24_1 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =24
+                Size: =21
+                Text: ="-"
+                Width: =31
+                X: =452
+                Y: =25
+                ZIndex: =52
+
+            Label17_2 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =31
+                Size: =17
+                Text: ="2023"
+                Width: =66
+                X: =471
+                Y: =22
+                ZIndex: =53
+

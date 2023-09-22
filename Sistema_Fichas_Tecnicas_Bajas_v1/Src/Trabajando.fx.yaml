@@ -1,0 +1,49 @@
+Trabajando As screen:
+    Fill: =RGBA(215, 223, 240, 1)
+
+    Image2 As image:
+        Height: =630
+        Image: =DPgi378X0AAZkFL
+        ImagePosition: =ImagePosition.Fill
+        Width: =570
+        X: =35
+        Y: =245
+        ZIndex: =1
+
+    Rectangle1_7 As rectangle:
+        Fill: =RGBA(9, 33, 98, 1)
+        Height: =89
+        Width: =640
+        ZIndex: =2
+
+    Icon16_2 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(Portada,ScreenTransition.Fade)
+        Width: =86
+        X: =15
+        Y: =13
+        ZIndex: =3
+
+    Label6_3 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =68
+        Size: =27
+        Text: ="Ficha de Baja"
+        Width: =494
+        X: =112
+        Y: =10
+        ZIndex: =4
+
+    Image6_6 As image:
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =93
+        Image: ='Logo-Personal'
+        ImagePosition: =ImagePosition.Fill
+        Width: =640
+        Y: =1043
+        ZIndex: =5
+

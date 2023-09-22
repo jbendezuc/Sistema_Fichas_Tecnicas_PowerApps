@@ -1,0 +1,753 @@
+"Ficha_Tecnica As screen.'printableLayout_A4Portrait_ver1.0'":
+    Height: =1123
+    Width: =794
+
+    Container2 As groupContainer.manualLayoutContainer:
+        Height: =1123
+        Width: =794
+        ZIndex: =1
+
+        Label12 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =20
+            Size: =12
+            Text: |-
+                ="FACULTAD:"
+            Width: =139
+            X: =235
+            Y: =237
+            ZIndex: =1
+
+        FT_Facultad As label:
+            Height: =21
+            Size: =10
+            Text: =varFichaTecnica.FACULTAD
+            Width: =154
+            X: =336
+            Y: =236
+            ZIndex: =2
+
+        Image4 As image:
+            Height: =185
+            Image: =If((Len(varFichaTecnica.IMAGEN)) > 800,Substitute(varFichaTecnica.IMAGEN,"""",""),visibleImage=false)
+            Visible: =visibleImage
+            Width: =394
+            X: =107
+            Y: =764
+            ZIndex: =3
+
+        Rectangle5 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            Height: =1
+            Width: =550
+            X: =156
+            Y: =198
+            ZIndex: =4
+
+        Tabla As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =87
+            X: =61
+            Y: =236
+            ZIndex: =5
+
+        Label11_2 As label:
+            Align: =Align.Center
+            Height: =34
+            Size: =14
+            Text: ="Oficina de Operaciones - Mesa de Servicio"
+            Width: =411
+            X: =238
+            Y: =133
+            ZIndex: =6
+
+        Label13_2 As label:
+            Align: =Align.Center
+            Height: =28
+            Text: ="En referencia al "&varFichaTecnica.MEDIO&" Nº "&varFichaTecnica.NOFICIO
+            Visible: =If(varFichaTecnica.MEDIO = "Oficio" || varFichaTecnica.MEDIO = "Proveído",true,false)
+            Width: =539
+            X: =156
+            Y: =203
+            ZIndex: =7
+
+        Label12_2 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Height: =41
+            Size: =18
+            Text: ="Reporte de Visita Técnica N° "&varFichaTecnica.LOCAL&" - "&varFichaTecnica.ID&" - "&"2023"
+            Width: =636
+            X: =110
+            Y: =160
+            ZIndex: =8
+
+        Label14 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            Size: =12
+            Text: |-
+                ="LOCAL:"
+            Width: =85
+            X: =63
+            Y: =236
+            ZIndex: =9
+
+        FT_Local As label:
+            Height: =21
+            Size: =11
+            Text: =varFichaTecnica.LOCAL
+            Width: =87
+            X: =148
+            Y: =236
+            ZIndex: =10
+
+        Label12_3 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =20
+            Size: =12
+            Text: |-
+                ="OFICINA:"
+            Width: =88
+            X: =477
+            Y: =237
+            ZIndex: =11
+
+        FT_Oficina As label:
+            Height: =20
+            Size: =10
+            Text: =varFichaTecnica.NOMBRE_OFICINA
+            Width: =220
+            X: =565
+            Y: =237
+            ZIndex: =12
+
+        Tabla_1 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =87
+            X: =148
+            Y: =236
+            ZIndex: =13
+
+        Tabla_2 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =100
+            X: =235
+            Y: =236
+            ZIndex: =14
+
+        Tabla_3 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =137
+            X: =336
+            Y: =236
+            ZIndex: =15
+
+        Tabla_4 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =93
+            X: =472
+            Y: =236
+            ZIndex: =16
+
+        Tabla_5 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =209
+            X: =565
+            Y: =236
+            ZIndex: =17
+
+        Label14_1 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            Size: =12
+            Text: |-
+                ="BIEN INFORMATICO:"
+            Width: =177
+            X: =61
+            Y: =258
+            ZIndex: =19
+
+        Tabla_6 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =174
+            X: =61
+            Y: =258
+            ZIndex: =20
+
+        Tabla_7 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =131
+            X: =235
+            Y: =258
+            ZIndex: =21
+
+        Tabla_8 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =269
+            X: =61
+            Y: =279
+            ZIndex: =22
+
+        Label14_2 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =24
+            Size: =12
+            Text: ="IDENTIFICACION DE MAQUINA"
+            Width: =275
+            X: =61
+            Y: =278
+            ZIndex: =23
+
+        Tabla_9 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =142
+            X: =330
+            Y: =279
+            ZIndex: =24
+
+        Label14_3 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            Size: =12
+            Text: |-
+                ="Nº PATRIMONIO:"
+            Width: =145
+            X: =328
+            Y: =279
+            ZIndex: =25
+
+        Tabla_10 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =106
+            X: =472
+            Y: =279
+            ZIndex: =26
+
+        FT_Patrimonio As label:
+            Height: =22
+            Size: =10
+            Text: =varFichaTecnica.PATRIMONIO
+            Width: =95
+            X: =472
+            Y: =279
+            ZIndex: =27
+
+        Tabla_11 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =57
+            X: =578
+            Y: =279
+            ZIndex: =28
+
+        Tabla_12 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =139
+            X: =635
+            Y: =279
+            ZIndex: =29
+
+        Label14_4 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =23
+            Size: =12
+            Text: |-
+                ="SERIE:"
+            Width: =69
+            X: =578
+            Y: =279
+            ZIndex: =30
+
+        FT_Serie As label:
+            Height: =20
+            Size: =10
+            Text: =varFichaTecnica.SERIE
+            Width: =148
+            X: =635
+            Y: =280
+            ZIndex: =31
+
+        FT_Bien_Informatico As label:
+            Height: =21
+            Size: =10
+            Text: =varFichaTecnica.BIEN_INFORMATICO
+            Width: =130
+            X: =236
+            Y: =258
+            ZIndex: =32
+
+        Tabla_13 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =237
+            X: =61
+            Y: =300
+            ZIndex: =33
+
+        Tabla_14 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =477
+            X: =297
+            Y: =300
+            ZIndex: =34
+
+        Tabla_15 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =236
+            X: =61
+            Y: =321
+            ZIndex: =35
+
+        Tabla_16 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =476
+            X: =298
+            Y: =321
+            ZIndex: =36
+
+        Label14_5 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            Size: =12
+            Text: |-
+                ="RESPONSABLE:"
+            Width: =234
+            X: =63
+            Y: =300
+            ZIndex: =37
+
+        Label14_6 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            Size: =12
+            Text: |-
+                ="ASUNTO/SERVICIO:"
+            Width: =235
+            X: =63
+            Y: =321
+            ZIndex: =38
+
+        FT_Responsable As label:
+            Height: =21
+            Size: =12
+            Text: =varFichaTecnica.RESPONSABLE
+            Width: =415
+            X: =312
+            Y: =300
+            ZIndex: =39
+
+        FT_Asunto As label:
+            Height: =21
+            Size: =12
+            Text: =varFichaTecnica.ASUNTO
+            Width: =415
+            X: =318
+            Y: =321
+            ZIndex: =40
+
+        Label14_7 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            Size: =12
+            Text: |-
+                ="DIAGNOSTICO:"
+            Width: =234
+            X: =61
+            Y: =352
+            ZIndex: =41
+
+        FT_Diagnostico As label:
+            Align: =Align.Justify
+            AutoHeight: =true
+            Height: =30
+            Size: =12
+            Text: =varFichaTecnica.DIAGNOSTICO
+            Width: =711
+            X: =62
+            Y: =374
+            ZIndex: =42
+
+        Rectangle5_1 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            Height: =1
+            Width: =713
+            X: =68
+            Y: =565
+            ZIndex: =43
+
+        Label14_8 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            Size: =12
+            Text: |-
+                ="FALLA:"
+            Width: =234
+            X: =61
+            Y: =566
+            ZIndex: =44
+
+        FT_Falla As label:
+            Align: =Align.Justify
+            AutoHeight: =true
+            Height: =91
+            Size: =12
+            Text: =varFichaTecnica.FALLA
+            Width: =711
+            X: =63
+            Y: =600
+            ZIndex: =45
+
+        Rectangle5_2 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            Height: =1
+            Width: =713
+            X: =67
+            Y: =657
+            ZIndex: =46
+
+        Label14_9 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            Size: =12
+            Text: |-
+                ="OBSERVACION/RECOMENDACIÓN:"
+            Width: =313
+            X: =61
+            Y: =657
+            ZIndex: =47
+
+        FT_Observacion As label:
+            Align: =Align.Justify
+            AutoHeight: =true
+            Height: =30
+            Size: =12
+            Text: =varFichaTecnica.OBSERVACION
+            Width: =711
+            X: =68
+            Y: =683
+            ZIndex: =48
+
+        Rectangle5_3 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            Height: =1
+            Width: =713
+            X: =67
+            Y: =737
+            ZIndex: =49
+
+        Label14_10 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            Size: =12
+            Text: |-
+                ="FECHA:"
+            Width: =86
+            X: =546
+            Y: =817
+            ZIndex: =50
+
+        FT_Observacion_1 As label:
+            Align: =Align.Justify
+            Height: =28
+            Size: =12
+            Text: =varFichaTecnica.FECHA
+            Width: =141
+            X: =621
+            Y: =813
+            ZIndex: =51
+
+        Rectangle5_4 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            Height: =1
+            Width: =238
+            X: =88
+            Y: =1030
+            ZIndex: =52
+
+        Rectangle5_5 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            Height: =1
+            Width: =238
+            X: =462
+            Y: =1030
+            ZIndex: =53
+
+        FT_FirmaR As image:
+            Height: =107
+            Image: =Substitute(varFichaTecnica.FIRMARESPONSABLE,"""","")
+            Width: =150
+            X: =124
+            Y: =936
+            ZIndex: =54
+
+        FT_FirmaT As image:
+            Height: =107
+            Image: =Substitute(varFichaTecnica.FIRMATECNICO,"""","")
+            Width: =150
+            X: =497
+            Y: =936
+            ZIndex: =55
+
+        Label14_11 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            Size: =12
+            Text: ="Firma Responsable"
+            Width: =234
+            X: =102
+            Y: =1031
+            ZIndex: =56
+
+        Label14_12 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            Size: =12
+            Text: ="Firma Técnico"
+            Width: =234
+            X: =504
+            Y: =1031
+            ZIndex: =57
+
+        FT_Responsable_1 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Height: =26
+            Size: =12
+            Text: =varFichaTecnica.RESPONSABLE
+            Width: =320
+            X: =40
+            Y: =1052
+            ZIndex: =58
+
+        FT_Tecnico As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Height: =26
+            Size: =12
+            Text: =varFichaTecnica.TECNICO
+            Width: =320
+            X: =434
+            Y: =1052
+            ZIndex: =59
+
+        Label14_13 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =35
+            Size: =12
+            Text: |-
+                =If((Len(varFichaTecnica.IMAGEN)) > 800,"FOTO BIEN INFORMATICO:","")
+            Width: =346
+            X: =62
+            Y: =738
+            ZIndex: =60
+
+        Image1_2 As image:
+            Height: =64
+            Image: =logo_unfv
+            Width: =148
+            X: =40
+            Y: =40
+            ZIndex: =61
+
+        Label6_2 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =48
+            Size: =16
+            Text: ="UNIVERSIDAD NACIONAL FEDERICO VILLARREAL"
+            Width: =562
+            X: =174
+            Y: =78
+            ZIndex: =62
+
+        Label7_2 As label:
+            Align: =Align.Center
+            Height: =43
+            Size: =14
+            Text: ="Oficina Central de Gestión de Tecnologías de la Informción (OCGTI)"
+            Width: =607
+            X: =139
+            Y: =105
+            ZIndex: =63
+
+        Label13_3 As label:
+            Align: =Align.Center
+            Height: =29
+            Text: ="En Referencia a la Solicitud vía "&varFichaTecnica.MEDIO
+            Visible: =If(varFichaTecnica.MEDIO = "Verbal" || varFichaTecnica.MEDIO = "Correo" ,true,false)
+            Width: =553
+            X: =153
+            Y: =203
+            ZIndex: =64
+
+        Label14_16 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =20
+            Size: =12
+            Text: |-
+                ="MARCA:"
+            Width: =83
+            X: =368
+            Y: =260
+            ZIndex: =65
+
+        Tabla_17 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =79
+            X: =366
+            Y: =257
+            ZIndex: =66
+
+        FT_Serie_1 As label:
+            Height: =19
+            Size: =9
+            Text: =varFichaTecnica.MARCA
+            Width: =91
+            X: =446
+            Y: =259
+            ZIndex: =67
+
+        Tabla_19 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =92
+            X: =446
+            Y: =257
+            ZIndex: =69
+
+        Tabla_20 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =20
+            Width: =84
+            X: =537
+            Y: =258
+            ZIndex: =70
+
+        Tabla_21 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =21
+            Width: =153
+            X: =621
+            Y: =258
+            ZIndex: =71
+
+        Label14_17 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =18
+            Size: =12
+            Text: |-
+                ="MODELO:"
+            Width: =96
+            X: =539
+            Y: =261
+            ZIndex: =72
+
+        FT_Serie_2 As label:
+            Height: =22
+            Size: =9
+            Text: =varFichaTecnica.MODELO
+            X: =624
+            Y: =257
+            ZIndex: =73
+
+        FT_Asunto_1 As label:
+            Align: =Align.Center
+            Height: =46
+            Size: =12
+            Text: |-
+                ="NOTA: Se solicita brindar la conformidad de la atención en un plazo de 48 horas, caso contrario se dará por aceptada la conformidad"
+            Width: =727
+            X: =47
+            Y: =1075
+            ZIndex: =74
+
+    Icon14 As icon.Mail:
+        Color: =RGBA(0, 0, 0, 1)
+        Icon: =Icon.Mail
+        OnSelect: =Set(archivopdf,PDF(Container2));Set(Correo_FichaTecnica,1);Navigate(Enviar_Correo,ScreenTransition.Fade)
+        Visible: =Not(Ficha_Tecnica.Printing)
+        X: =693
+        Y: =843
+        ZIndex: =2
+
+    Icon15 As icon.Print:
+        Color: =RGBA(0, 0, 0, 1)
+        Icon: =Icon.Print
+        OnSelect: =Print()
+        Visible: =Not(Ficha_Tecnica.Printing)
+        X: =693
+        Y: =932
+        ZIndex: =3
+
+    Icon18 As icon.BackArrow:
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        Visible: =Not(Ficha_Tecnica.Printing)
+        X: =696
+        Y: =19
+        ZIndex: =4
+

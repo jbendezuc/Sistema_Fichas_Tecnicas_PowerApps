@@ -1,0 +1,81 @@
+"Pantalla_Principal As screen.'phoneLayout_Success_ver3.0'":
+    BackgroundImage: ='77840'
+    Fill: =RGBA(215, 223, 240, 1)
+    ImagePosition: =ImagePosition.Fill
+
+    Circle1_3 As circle:
+        Fill: =RGBA(255, 255, 255, Timer1_2.Value/Timer1_2.Duration)
+        Height: =210
+        Width: =446
+        X: =2
+        ZIndex: =1
+
+    LblSuccessMsg2 As label:
+        Align: =Align.Center
+        AutoHeight: =true
+        Color: =RGBA(0, 18, 0,  Timer1_2.Value/Timer1_2.Duration)
+        FontWeight: =FontWeight.Bold
+        Height: =179
+        Size: =25
+        Text: ="Bienvenido "&User().FullName&" a OCGTI"
+        Width: =446
+        X: =2
+        Y: =48
+        ZIndex: =2
+
+    Image8 As image:
+        Height: =614
+        Image: ='Robot-Asistent'
+        ImagePosition: =ImagePosition.Stretch
+        Width: =504
+        X: =136
+        Y: =395
+        ZIndex: =3
+
+    Image6_8 As image:
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =127
+        Image: ='Logo-Personal'
+        ImagePosition: =ImagePosition.Fill
+        Width: =640
+        Y: =1009
+        ZIndex: =4
+
+    Timer1_2 As timer:
+        AutoPause: =false
+        AutoStart: =true
+        Duration: =4750
+        Height: =70
+        OnTimerEnd: =Navigate(Portada,ScreenTransition.Fade)
+        OnTimerStart: =true
+        Visible: =false
+        Width: =280
+        X: =2
+        Y: =710
+        ZIndex: =5
+
+    Circle1 As circle:
+        Fill: =RGBA(255, 255, 255, Timer1_2.Value/Timer1_2.Duration)
+        Height: =43
+        Width: =57
+        X: =256
+        Y: =352
+        ZIndex: =6
+
+    Circle1_1 As circle:
+        Fill: =RGBA(255, 255, 255, Timer1_2.Value/Timer1_2.Duration)
+        Height: =59
+        Width: =79
+        X: =203
+        Y: =282
+        ZIndex: =7
+
+    Circle1_2 As circle:
+        Fill: =RGBA(255, 255, 255, Timer1_2.Value/Timer1_2.Duration)
+        Height: =59
+        Width: =93
+        X: =136
+        Y: =223
+        ZIndex: =8
+

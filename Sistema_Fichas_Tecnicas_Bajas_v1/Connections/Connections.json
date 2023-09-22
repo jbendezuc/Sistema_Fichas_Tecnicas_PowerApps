@@ -1,0 +1,111 @@
+{
+  "0e61a960-ccda-4c2e-adbc-b4271c460351": {
+    "appActions": [
+      "SearchUser"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Usuarios de Office 365",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/henryorsborn/partial-builds/asev3migrations-with-resourceTemplate/1.0.1653.3403/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "UsuariosdeOffice365"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "0e61a960-ccda-4c2e-adbc-b4271c460351"
+  },
+  "aa621f55-aa49-4da0-b88c-4e7e08812a75": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1654/1.0.1654.3414/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://unfvpe.sharepoint.com/sites/OCGTI_FileServer": {
+        "dataSources": {
+          "BIENES_INFORMATICOS": {
+            "tableName": "5927b82c-ea14-4c03-96f2-25681d511349"
+          },
+          "LOCAL_SEDE": {
+            "tableName": "d5dabea2-d594-4450-871e-7b8082273cfd"
+          },
+          "MEDIOS_INFORMATIVOS": {
+            "tableName": "bb9d52fe-5357-4cb6-8aae-adb40257c2da"
+          },
+          "MODELO_MARCA": {
+            "tableName": "413a8ecb-f9f7-4c00-98b7-7ab6b2ca5aa8"
+          },
+          "OFICINAS": {
+            "tableName": "00322143-4c2a-4d58-aaa3-a9376d47c543"
+          },
+          "SERVICIOS": {
+            "tableName": "9f2ecbf0-c898-42e6-929f-01b5c1ae4ee4"
+          },
+          "TECNICOS": {
+            "tableName": "516c33a1-a518-49ad-9929-cd9ab164d101"
+          }
+        }
+      },
+      "https://unfvpe.sharepoint.com/sites/OCGTI_FileServer/Of_Operaciones/FichasBajas": {
+        "dataSources": {
+          "FICHAS_BAJAS": {
+            "tableName": "5992eb25-7c2d-42f0-a9e5-6110d50f506c"
+          }
+        }
+      },
+      "https://unfvpe.sharepoint.com/sites/OCGTI_FileServer/Of_Operaciones/FichasTecnicas": {
+        "dataSources": {
+          "FICHAS_TECNICAS": {
+            "tableName": "e235fdc4-6dc9-41ea-9642-dc8a48ac34e7"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "FICHAS_TECNICAS",
+      "LOCAL_SEDE",
+      "OFICINAS",
+      "TECNICOS",
+      "MODELO_MARCA",
+      "BIENES_INFORMATICOS",
+      "SERVICIOS",
+      "MEDIOS_INFORMATIVOS",
+      "FICHAS_BAJAS"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "aa621f55-aa49-4da0-b88c-4e7e08812a75"
+  },
+  "c71ae2d8-ba65-4faa-a548-8eb0c5655a02": {
+    "appActions": [
+      "SendEmail"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office\u00A0365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/henryorsborn/partial-builds/asev3migrations-with-resourceTemplate/1.0.1653.3403/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "c71ae2d8-ba65-4faa-a548-8eb0c5655a02"
+  }
+}

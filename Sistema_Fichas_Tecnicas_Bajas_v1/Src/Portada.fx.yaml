@@ -1,0 +1,125 @@
+Portada As screen:
+    BackgroundImage: ='856791'
+    Fill: =RGBA(0, 0, 0, 1)
+    ImagePosition: =ImagePosition.Stretch
+
+    Rectangle1_1 As rectangle:
+        Fill: =RGBA(9, 33, 98, 1)
+        Height: =103
+        Width: =449
+        X: =190
+        Y: =140
+        ZIndex: =2
+
+    Button3 As button:
+        Fill: =RGBA(130, 141, 158, 1)
+        Height: =70
+        OnSelect: =Navigate(Registrar_Datos,ScreenTransition.Fade)
+        Size: =24
+        Text: ="Registrar Visita"
+        Width: =318
+        X: =161
+        Y: =439
+        ZIndex: =3
+
+    Button4 As button:
+        Fill: =RGBA(130, 141, 158, 1)
+        Height: =70
+        OnSelect: =Navigate(Lista_Fichas_Tecnicas,ScreenTransition.Fade);Reset(BuscarFichaTecnica)
+        Size: =24
+        Text: ="Ver Fichas Tecnicas"
+        Width: =318
+        X: =161
+        Y: =549
+        ZIndex: =4
+
+    Rectangle1 As rectangle:
+        Fill: =RGBA(9, 33, 98, 1)
+        Height: =126
+        Width: =640
+        ZIndex: =5
+
+    Label3 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =140
+        Size: =24
+        Text: |-
+            ="UNIVERSIDAD NACIONAL
+            FEDERICO VILLARREAL"
+        Width: =433
+        X: =2
+        ZIndex: =6
+
+    Button4_1 As button:
+        Fill: =RGBA(130, 141, 158, 1)
+        Height: =70
+        OnSelect: =Navigate(Lista_Fichas_Bajas,ScreenTransition.Fade);Reset(BuscarFichaBaja)
+        Size: =24
+        Text: ="Ver Fichas de Bajas"
+        Width: =318
+        X: =161
+        Y: =660
+        ZIndex: =7
+
+    Icon4 As icon.Database:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.Database
+        X: =81
+        Y: =445
+        ZIndex: =8
+
+    Icon5 As icon.View:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.View
+        X: =81
+        Y: =549
+        ZIndex: =9
+
+    Image1 As image:
+        Image: =logo_unfv
+        Width: =196
+        X: =430
+        Y: =13
+        ZIndex: =10
+
+    Label7 As label:
+        Align: =Align.Center
+        AutoHeight: =true
+        Color: =RGBA(198, 252, 126, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =61
+        Size: =25
+        Text: =User().FullName
+        Width: =433
+        X: =198
+        Y: =150
+        ZIndex: =11
+
+    Icon5_1 As icon.View:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.View
+        X: =81
+        Y: =660
+        ZIndex: =12
+
+    Image6_9 As image:
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =123
+        Image: ='Logo-Personal'
+        ImagePosition: =ImagePosition.Fill
+        Width: =640
+        Y: =1013
+        ZIndex: =13
+
+    Image9 As image:
+        Height: =103
+        Image: =User().Image
+        ImagePosition: =ImagePosition.Fill
+        Width: =124
+        X: =37
+        Y: =140
+        ZIndex: =14
+

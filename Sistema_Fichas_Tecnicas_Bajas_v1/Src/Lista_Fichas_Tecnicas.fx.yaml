@@ -1,0 +1,232 @@
+"Lista_Fichas_Tecnicas As screen.'phoneLayout_HeaderAndGallery_ver3.0'":
+    Fill: =RGBA(232, 244, 217, 1)
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =962
+        Items: |+
+            =If(
+                !IsBlank(Tecnico_campo.Text) && IsBlank(BuscarFichaTecnica.Text),
+                Sort(Filter(
+                    FICHAS_TECNICAS,
+                    TECNICO = Tecnico_campo.Text
+                ),ID,SortOrder.Descending),
+                !IsBlank(Tecnico_campo.Text) && !IsBlank(BuscarFichaTecnica.Text),
+                Sort(Filter(
+                    FICHAS_TECNICAS,
+                    TECNICO = Tecnico_campo.Text,
+                    StartsWith(FECHA,BuscarFichaTecnica.Text) || StartsWith(PATRIMONIO,BuscarFichaTecnica.Text) || StartsWith(ID,BuscarFichaTecnica.Text)
+                ),ID,SortOrder.Descending),
+                FICHAS_TECNICAS
+            )
+            
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =220
+        Y: =172
+        ZIndex: =1
+
+        Image3 As image:
+            Height: =128
+            Image: =logo_unfv_1
+            OnSelect: =Select(Parent)
+            Width: =128
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Local_Lista As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'Id. de activo de cumplimiento normativo'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - Image3.Width - 104
+            X: =Image3.X + Image3.Width + 24
+            Y: =74
+            ZIndex: =2
+
+        Sede_Lista As label:
+            Height: =34
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =ThisItem.FACULTAD
+            VerticalAlign: =VerticalAlign.Top
+            Width: =160
+            X: =68
+            Y: =170
+            ZIndex: =3
+
+        NextArrow2 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =81
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent);Navigate(Detalle_Ficha_Tecnica);Set(varFichaTecnica,ThisItem)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="Ver los detalles del elemento"
+            Width: =90
+            X: =550
+            Y: =108
+            ZIndex: =4
+
+        Separator2 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+        Patrimonio_Lista As label:
+            FontWeight: =FontWeight.Bold
+            Height: =42
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =ThisItem.PATRIMONIO
+            Width: =145
+            X: =360
+            Y: =166
+            ZIndex: =6
+
+        Tecnico_Lista As label:
+            AutoHeight: =true
+            Height: =43
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.TECNICO
+            Width: =355
+            X: =176
+            Y: =70
+            ZIndex: =8
+
+        Fecha_Lista As label:
+            Height: =46
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.FECHA
+            Width: =231
+            X: =176
+            Y: =130
+            ZIndex: =9
+
+        Label8 As label:
+            Height: =57
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: |-
+                ="Patrimonio:"
+            Width: =177
+            X: =240
+            Y: =158
+            ZIndex: =10
+
+        Label9 As label:
+            Align: =Align.Center
+            BorderThickness: =3
+            Color: =RGBA(0, 18, 107, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =56
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: ="Ficha Tecnica N° "&ThisItem.ID
+            Width: =428
+            X: =103
+            Y: =4
+            ZIndex: =11
+
+        Label34 As label:
+            Height: =45
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =ThisItem.LOCAL
+            Width: =104
+            X: =40
+            Y: =126
+            ZIndex: =12
+
+        Tecnico_Lista_1 As label:
+            AutoHeight: =true
+            Height: =48
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.BIEN_INFORMATICO&"/"&ThisItem.MARCA
+            Width: =355
+            X: =176
+            Y: =108
+            ZIndex: =13
+
+    Rectangle3 As rectangle:
+        Fill: =RGBA(9, 33, 98, 1)
+        Height: =76
+        Width: =640
+        ZIndex: =2
+
+    Icon7 As icon.AddDocument:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.AddDocument
+        OnSelect: =Navigate(Registrar_Datos,ScreenTransition.Cover)
+        X: =550
+        Y: =6
+        ZIndex: =3
+
+    Label10 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =27
+        Text: ="FICHAS TECNICAS"
+        Width: =347
+        X: =162
+        Y: =4
+        ZIndex: =4
+
+    Arrow1 As arrow.backArrow:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =66
+        OnSelect: =Navigate(Portada,ScreenTransition.CoverRight)
+        Width: =66
+        X: =26
+        Y: =6
+        ZIndex: =5
+
+    BuscarFichaTecnica As text:
+        Default: =""
+        Height: =64
+        HintText: |-
+            ="Busca por N° #/ Fecha/ Patrimonio"
+        Size: =21
+        Width: =614
+        X: =13
+        Y: =97
+        ZIndex: =6
+
+    Icon8 As icon.Search:
+        Color: =RGBA(153, 153, 153, 1)
+        DisplayMode: =DisplayMode.View
+        Height: =36
+        Icon: =Icon.Search
+        Width: =47
+        X: =558
+        Y: =114
+        ZIndex: =7
+
+    Tecnico_campo As text:
+        Default: =User().FullName
+        Height: =64
+        HintText: ="Busca por N°/Tecnico/Fecha/Patrimonio"
+        Size: =21
+        Visible: =false
+        Width: =614
+        X: =13
+        Y: =172
+        ZIndex: =8
+

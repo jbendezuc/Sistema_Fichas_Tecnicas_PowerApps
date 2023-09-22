@@ -1,0 +1,88 @@
+"Validacion_Correcta_FB As screen.'phoneLayout_Success_ver3.0'":
+    BackgroundImage: ='856791'
+    ImagePosition: =ImagePosition.Fill
+
+    iconCircle1_1 As circle.Circle:
+        Fill: =RGBA(152, 208, 70, Timer1_1.Value/Timer1_1.Duration)
+        Height: =149
+        Width: =159
+        X: =241
+        Y: =391
+        ZIndex: =1
+
+    iconCheck1_1 As icon.Check:
+        Color: =RGBA(255, 255, 255, Timer1_1.Value/Timer1_1.Duration)
+        Height: =130
+        Icon: =Icon.Check
+        PaddingBottom: =Self.PaddingTop
+        PaddingLeft: =Self.PaddingTop
+        PaddingRight: =Self.PaddingTop
+        PaddingTop: =18
+        Width: =171
+        X: =235
+        Y: =398
+        ZIndex: =2
+
+    LblSuccessMsg1_1 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(187, 221, 140, 1)
+        Color: =RGBA(255, 255, 255, Timer1_1.Value/Timer1_1.Duration)
+        FontWeight: =FontWeight.Bold
+        Height: =78
+        Size: =21
+        Text: ="Se Realizo con Éxito."
+        Width: =311
+        X: =164
+        Y: =590
+        ZIndex: =3
+
+    Rectangle1_6 As rectangle:
+        Fill: =RGBA(9, 33, 98, 1)
+        Height: =140
+        Width: =640
+        Y: =82
+        ZIndex: =4
+
+    Label3_4 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =140
+        Size: =24
+        Text: |-
+            ="UNIVERSIDAD NACIONAL
+            FEDERICO VILLARREAL"
+        Width: =433
+        X: =2
+        Y: =82
+        ZIndex: =5
+
+    Image1_3 As image:
+        Image: =logo_unfv
+        Width: =196
+        X: =435
+        Y: =102
+        ZIndex: =6
+
+    Image6_5 As image:
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =173
+        Image: =logo2
+        ImagePosition: =ImagePosition.Fill
+        Width: =640
+        Y: =963
+        ZIndex: =7
+
+    Timer1_1 As timer:
+        AutoPause: =false
+        AutoStart: =true
+        Duration: =3000
+        Height: =70
+        OnTimerEnd: =Navigate(Lista_Fichas_Bajas,ScreenTransition.Fade)
+        OnTimerStart: =true
+        Visible: =false
+        Width: =280
+        X: =2
+        Y: =710
+        ZIndex: =8
+

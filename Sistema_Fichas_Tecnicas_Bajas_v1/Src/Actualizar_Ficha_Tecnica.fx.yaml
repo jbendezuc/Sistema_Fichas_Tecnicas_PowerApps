@@ -1,0 +1,609 @@
+Actualizar_Ficha_Tecnica As screen:
+    BackgroundImage: ='Cocoaa Ice'
+    Fill: =RGBA(0, 0, 0, 0)
+    ImagePosition: =ImagePosition.Stretch
+
+    Canvas2_1 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =1134
+        Width: =640
+        Y: =2
+        ZIndex: =1
+
+        DataCard5_1 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =2947
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Label1_17 As label:
+                Height: =51
+                Size: =17
+                Text: |-
+                    ="Local:"
+                Width: =221
+                X: =28
+                Y: =89
+                ZIndex: =1
+
+            Label1_18 As label:
+                Height: =51
+                Size: =17
+                Text: |-
+                    ="Facultad:"
+                Width: =221
+                X: =28
+                Y: =168
+                ZIndex: =2
+
+            Local_1 As dropdown:
+                Default: =varFichaTecnica.LOCAL
+                Height: =51
+                Items: |-
+                    =ForAll(Distinct(LOCAL_SEDE,LOCAL), {Result: ThisRecord.Value}).Result
+                Reset: =resetearControles_Editar
+                Size: =18
+                Width: =350
+                X: =257
+                Y: =89
+                ZIndex: =3
+
+            Facultad_1 As dropdown:
+                Default: =varFichaTecnica.FACULTAD
+                Height: =51
+                Items: =Filter(LOCAL_SEDE,LOCAL=Local_1.Selected.Result)
+                Reset: =resetearControles_Editar
+                Size: =18
+                Width: =350
+                X: =257
+                Y: =168
+                ZIndex: =4
+
+            Label1_19 As label:
+                Height: =46
+                Size: =17
+                Text: |-
+                    ="Oficina:"
+                Width: =144
+                X: =28
+                Y: =238
+                ZIndex: =5
+
+            Label1_21 As label:
+                Height: =42
+                Size: =17
+                Text: |-
+                    ="Bien Informatico:"
+                Width: =264
+                X: =28
+                Y: =386
+                ZIndex: =6
+
+            Oficina_1 As dropdown:
+                Default: =varFichaTecnica.OFICINA
+                Height: =51
+                Items: =OFICINAS
+                Reset: =resetearControles_Editar
+                Size: =17
+                Width: =350
+                X: =257
+                Y: =238
+                ZIndex: =7
+
+            Marca_1 As dropdown:
+                Default: =varFichaTecnica.MARCA
+                Height: =43
+                Items: |-
+                    =ForAll(Distinct(MODELO_MARCA,MARCA), {Result: ThisRecord.Value}).Result
+                Reset: =resetearControles_Editar
+                Size: =12
+                Width: =162
+                X: =118
+                Y: =437
+                ZIndex: =8
+
+            Label1_24 As label:
+                Height: =52
+                Size: =17
+                Text: |-
+                    ="Patrimonio:"
+                Width: =144
+                X: =28
+                Y: =496
+                ZIndex: =9
+
+            Label1_25 As label:
+                Height: =47
+                Size: =17
+                Text: |-
+                    ="Serie:"
+                Width: =77
+                X: =341
+                Y: =496
+                ZIndex: =10
+
+            Label1_26 As label:
+                Height: =55
+                Size: =17
+                Text: |-
+                    ="Técnico:"
+                Width: =195
+                X: =28
+                Y: =567
+                ZIndex: =11
+
+            Label1_31 As label:
+                Height: =55
+                Size: =17
+                Text: |-
+                    ="Diagnostico:"
+                Width: =282
+                X: =28
+                Y: =996
+                ZIndex: =12
+
+            Diagnostico_1 As text:
+                Align: =Align.Justify
+                Default: =varFichaTecnica.DIAGNOSTICO
+                Height: =154
+                Mode: =TextMode.MultiLine
+                Reset: =resetearControles_Editar
+                Size: =16
+                Width: =572
+                X: =37
+                Y: =1050
+                ZIndex: =13
+
+            Patrimonio_1 As text:
+                Default: =varFichaTecnica.PATRIMONIO
+                Height: =54
+                Reset: =resetearControles_Editar
+                Size: =17
+                Width: =165
+                X: =176
+                Y: =496
+                ZIndex: =14
+
+            Serie_1 As text:
+                Default: =varFichaTecnica.SERIE
+                Height: =54
+                Reset: =resetearControles_Editar
+                Size: =17
+                Width: =189
+                X: =418
+                Y: =496
+                ZIndex: =15
+
+            Label1_32 As label:
+                Height: =55
+                Size: =17
+                Text: |-
+                    ="Falla Detectada:"
+                Width: =282
+                X: =28
+                Y: =1197
+                ZIndex: =16
+
+            Falla_1 As text:
+                Align: =Align.Justify
+                Default: =varFichaTecnica.FALLA
+                Height: =141
+                Mode: =TextMode.MultiLine
+                Reset: =resetearControles_Editar
+                Size: =16
+                Width: =566
+                X: =43
+                Y: =1243
+                ZIndex: =17
+
+            Fecha_1 As datepicker:
+                Height: =47
+                Reset: =resetearControles_Editar
+                Size: =18
+                Width: =302
+                X: =301
+                Y: =995
+                ZIndex: =18
+
+            Button1_1 As button:
+                Fill: =RGBA(150, 163, 109, 1)
+                Height: =67
+                OnSelect: |-
+                    =
+                    Set(var_foto,JSON(UploadedImage1.Image,JSONFormat.IncludeBinaryData));
+                    
+                    If(var_limpiar_img_RT=1,Set(var_firma_responsable_1,JSON(Firma_Responsable_1.Image,JSONFormat.IncludeBinaryData)),Set(var_firma_responsable_1,varFichaTecnica.FIRMARESPONSABLE));
+                    
+                    If(var_limpiar_img_FT=1,Set(var_firma_tecnico_1,JSON(Firma_Tecnico_1.Image,JSONFormat.IncludeBinaryData)),Set(var_firma_tecnico_1,varFichaTecnica.FIRMATECNICO));
+                    Patch(FICHAS_TECNICAS,LookUp(FICHAS_TECNICAS,ThisRecord.ID = varFichaTecnica.ID),{LOCAL:Local_1.Selected.Result,FACULTAD:Facultad_1.Selected.SEDE,NOMBRE_OFICINA:Nombre_Oficina_1.Text,BIEN_INFORMATICO:Bien_Informatico_1.Selected.BIEN_INFORMATICO,OFICINA:Oficina.Selected.OFICINA,PATRIMONIO:Patrimonio_1.Text,MARCA:Marca_1.Selected.Result,MODELO:Modelo_1.Selected.MODELO,SERIE:Serie_1.Text,TECNICO:Tecnico_1.Text,RESPONSABLE:Responsable_1.Text,ASUNTO:Asunto_1.Selected.SERVICIO,FECHA:Fecha_1.SelectedDate,MEDIO:Medio_Informativo_1.Selected.MEDIO_INFORMATIVO,NOFICIO:Noficio_1.Text,DIAGNOSTICO:Diagnostico_1.Text,FALLA:Falla_1.Text,OBSERVACION:Observacion_1.Text,IMAGEN:Text(var_foto),ESTADO:{Value:"Nuevo"},CORREO:Correo_1.Text,FIRMATECNICO:Text(var_firma_tecnico_1),FIRMARESPONSABLE:Text(var_firma_responsable_1)});UpdateContext({resetearControles_Editar:true});UpdateContext({resetearControles_Editar:false});Navigate(Validacion_Correcta_FT,ScreenTransition.UnCoverRight);Reset(BuscarFichaTecnica)
+                Size: =24
+                Text: ="Actualizar"
+                Width: =258
+                X: =183
+                Y: =2734
+                ZIndex: =20
+
+            Label1_28 As label:
+                Height: =75
+                Size: =17
+                Text: |-
+                    ="Asunto /Servicio:"
+                Width: =118
+                X: =28
+                Y: =700
+                ZIndex: =21
+
+            Label1_23 As label:
+                Height: =43
+                Size: =17
+                Text: |-
+                    ="Marca:"
+                Width: =97
+                X: =28
+                Y: =437
+                ZIndex: =23
+
+            Label1_22 As label:
+                Height: =43
+                Size: =17
+                Text: |-
+                    ="Modelo:"
+                Width: =97
+                X: =282
+                Y: =436
+                ZIndex: =24
+
+            Modelo_1 As dropdown:
+                Default: =varFichaTecnica.MODELO
+                Height: =44
+                Items: =Filter(MODELO_MARCA,MARCA=Marca_1.Selected.Result)
+                Reset: =resetearControles_Editar
+                Size: =12
+                Width: =225
+                X: =383
+                Y: =436
+                ZIndex: =25
+
+            Label1_27 As label:
+                Height: =46
+                Size: =17
+                Text: |-
+                    ="Responsable:"
+                Width: =156
+                X: =28
+                Y: =647
+                ZIndex: =26
+
+            Responsable_1 As text:
+                Default: =varFichaTecnica.RESPONSABLE
+                Height: =51
+                Reset: =resetearControles_Editar
+                Size: =17
+                Width: =427
+                X: =181
+                Y: =638
+                ZIndex: =27
+
+            Label1_33 As label:
+                Height: =55
+                Size: =17
+                Text: |-
+                    ="Observaciones:"
+                Width: =282
+                X: =37
+                Y: =1396
+                ZIndex: =29
+
+            Observacion_1 As text:
+                Align: =Align.Justify
+                Default: =varFichaTecnica.OBSERVACION
+                Height: =180
+                Mode: =TextMode.MultiLine
+                Reset: =resetearControles_Editar
+                Size: =17
+                Width: =560
+                X: =43
+                Y: =1451
+                ZIndex: =30
+
+            Firma_Tecnico_1 As inkControl:
+                Color: =
+                Fill: =RGBA(0, 0, 0,0)
+                Height: =224
+                Reset: =resetearControles_Editar
+                ShowControls: =false
+                Width: =291
+                X: =319
+                Y: =2198
+                ZIndex: =31
+
+            Firma_Responsable_1 As inkControl:
+                Height: =224
+                Reset: =resetearControles_Editar
+                ShowControls: =false
+                Width: =291
+                X: =20
+                Y: =2198
+                ZIndex: =32
+
+            Label4_4 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =59
+                Size: =18
+                Text: ="Firma Tecnico"
+                Width: =208
+                X: =359
+                Y: =2434
+                ZIndex: =33
+
+            Label4_5 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =58
+                Size: =18
+                Text: ="Firma Responsable"
+                Width: =254
+                X: =26
+                Y: =2434
+                ZIndex: =34
+
+            Label4_6 As label:
+                Align: =Align.Center
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =69
+                Size: =18
+                Text: =Tecnico_1.Text
+                Width: =237
+                X: =351
+                Y: =2483
+                ZIndex: =35
+
+            Label4_7 As label:
+                Align: =Align.Center
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =42
+                Size: =18
+                Text: =Responsable_1.Text
+                Width: =248
+                X: =32
+                Y: =2492
+                ZIndex: =36
+
+            Icon2_1 As icon.Erase:
+                Icon: =Icon.Erase
+                OnSelect: =Reset(Firma_Tecnico_1);Set(var_limpiar_img_FT,1)
+                X: =431
+                Y: =2604
+                ZIndex: =39
+
+            Icon6_1 As icon.Erase:
+                Icon: =Icon.Erase
+                OnSelect: =Reset(Firma_Responsable_1);Set(var_limpiar_img_RT,1)
+                X: =74
+                Y: =2604
+                ZIndex: =40
+
+            Rectangle2_1 As rectangle:
+                Fill: =RGBA(9, 33, 98, 1)
+                Width: =623
+                Y: =2855
+                ZIndex: =41
+
+            Label5_1 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =70
+                Size: =21
+                Text: ="OCGTI APP - UNFV "
+                Width: =560
+                X: =28
+                Y: =2883
+                ZIndex: =42
+
+            Label1_29 As label:
+                Height: =55
+                Size: =17
+                Text: |-
+                    ="Medio:"
+                Width: =118
+                X: =26
+                Y: =846
+                ZIndex: =43
+
+            Medio_Informativo_1 As dropdown:
+                Default: =varFichaTecnica.MEDIO
+                Height: =51
+                Items: =MEDIOS_INFORMATIVOS
+                Reset: =resetearControles_Editar
+                Size: =17
+                Width: =429
+                X: =178
+                Y: =846
+                ZIndex: =44
+
+            Label1_20 As label:
+                Height: =59
+                Size: =17
+                Text: |-
+                    ="Nombre de la Oficina:"
+                Width: =144
+                X: =32
+                Y: =305
+                ZIndex: =45
+
+            Nombre_Oficina_1 As text:
+                Default: =varFichaTecnica.NOMBRE_OFICINA
+                Height: =51
+                Reset: =resetearControles_Editar
+                Size: =17
+                Width: =350
+                X: =257
+                Y: =305
+                ZIndex: =46
+
+            Bien_Informatico_1 As dropdown:
+                Default: =varFichaTecnica.BIEN_INFORMATICO
+                Height: =51
+                Items: =BIENES_INFORMATICOS
+                Reset: =resetearControles_Editar
+                Size: =17
+                Width: =350
+                X: =257
+                Y: =373
+                ZIndex: =47
+
+            Label1_30 As label:
+                Height: =71
+                Size: =17
+                Text: |-
+                    ="Correo 
+                    Responsable:"
+                Width: =151
+                X: =30
+                Y: =762
+                ZIndex: =48
+
+            Correo_1 As text:
+                Default: =varFichaTecnica.CORREO
+                Height: =51
+                Reset: =resetearControles_Editar
+                Size: =18
+                Width: =430
+                X: =180
+                Y: =776
+                ZIndex: =49
+
+            Asunto_1 As dropdown:
+                Default: =varFichaTecnica.ASUNTO
+                Height: =51
+                Items: =SERVICIOS
+                Reset: =resetearControles_Editar
+                Size: =17
+                Width: =429
+                X: =181
+                Y: =705
+                ZIndex: =50
+
+            Img_Firma_Tecnico As image:
+                Height: =224
+                Image: =Substitute(varFichaTecnica.FIRMATECNICO,"""","")
+                Visible: =If(var_limpiar_img_FT=1,false,true)
+                Width: =288
+                X: =321
+                Y: =2198
+                ZIndex: =51
+
+            Img_Firma_Responsable As image:
+                Height: =221
+                Image: =Substitute(varFichaTecnica.FIRMARESPONSABLE,"""","")
+                Visible: =If(var_limpiar_img_RT=1,false,true)
+                Width: =291
+                X: =20
+                Y: =2198
+                ZIndex: =52
+
+            AddMediaWithImage1 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =53
+
+                UploadedImage1 As image:
+                    Height: =399
+                    Image: =If(IsBlank(AddMediaButton1.Media),Substitute(varFichaTecnica.IMAGEN,"""",""), AddMediaButton1.Media)
+                    ImagePosition: =ImagePosition.Fill
+                    Width: =568
+                    X: =AddMediaButton1.X
+                    Y: =1739
+                    ZIndex: =54
+
+                AddMediaButton1 As addMedia:
+                    Height: =399
+                    Reset: =resetearControles_Editar
+                    Size: =25
+                    Width: =568
+                    X: =35
+                    Y: =1739
+                    ZIndex: =55
+
+            Label1_34 As label:
+                Height: =47
+                Size: =17
+                Text: |-
+                    ="Adjuntar Foto (Horizontal):"
+                Width: =355
+                X: =43
+                Y: =1664
+                ZIndex: =56
+
+            Icon19 As icon.History:
+                DisplayMode: =DisplayMode.View
+                Icon: =Icon.History
+                Rotation: =180
+                X: =367
+                Y: =1646
+                ZIndex: =57
+
+            Label1_36 As label:
+                Height: =55
+                Size: =17
+                Text: ="Doc. Nº"
+                Width: =118
+                X: =28
+                Y: =918
+                ZIndex: =58
+
+            Noficio_1 As text:
+                Default: =varFichaTecnica.NOFICIO
+                DisplayMode: =If(Medio_Informativo_1.SelectedText.MEDIO_INFORMATIVO = "Oficio" || Medio_Informativo_1.SelectedText.MEDIO_INFORMATIVO = "Proveído",DisplayMode.Edit,DisplayMode.Disabled)
+                Height: =51
+                Reset: =resetearControles_Editar
+                Size: =18
+                Width: =430
+                X: =178
+                Y: =918
+                ZIndex: =59
+
+            Tecnico_1 As text:
+                Default: =varFichaTecnica.TECNICO
+                DisplayMode: =DisplayMode.View
+                Height: =51
+                Size: =17
+                Width: =427
+                X: =181
+                Y: =569
+                ZIndex: =60
+
+    RectQuickActionBar1_2 As rectangle:
+        Fill: =RGBA(9, 33, 98, 1)
+        Height: =76
+        Width: =Parent.Width
+        ZIndex: =2
+
+    Label2_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =72
+        Size: =21
+        Text: ="EDITAR VISITA TÉCNICA"
+        Width: =535
+        X: =40
+        ZIndex: =5
+
+    Icon9 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: |-
+            =Navigate(Detalle_Ficha_Tecnica,ScreenTransition.CoverRight);Set(var_limpiar_img_FT,0);Set(var_limpiar_img_RT,0);UpdateContext({resetearControles_Editar:true});UpdateContext({resetearControles_Editar:false})
+        X: =29
+        Y: =4
+        ZIndex: =6
+
