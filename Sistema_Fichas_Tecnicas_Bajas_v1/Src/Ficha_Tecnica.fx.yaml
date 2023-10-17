@@ -235,7 +235,7 @@
         FT_Asunto As label:
             BorderThickness: =1
             Height: =21
-            Size: =12
+            Size: =10
             Text: =varFichaTecnica.ASUNTO
             Width: =441
             X: =299

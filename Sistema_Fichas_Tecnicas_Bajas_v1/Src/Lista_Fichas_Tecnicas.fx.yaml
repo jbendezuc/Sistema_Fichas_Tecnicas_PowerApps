@@ -221,8 +221,8 @@
 
     Tecnico_campo As text:
         Default: |-
-            ="Jose Luis Garcia Rojas"
-            //User().FullName
+            =//"Jose Luis Garcia Rojas"
+            User().FullName
         Height: =64
         HintText: ="Busca por N°/Tecnico/Fecha/Patrimonio"
         Size: =21
