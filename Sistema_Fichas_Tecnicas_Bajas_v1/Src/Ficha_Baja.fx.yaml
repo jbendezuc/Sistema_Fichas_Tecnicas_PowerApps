@@ -405,7 +405,7 @@
 
         FB_PC_Laptop As groupContainer.manualLayoutContainer:
             Height: =202
-            Visible: =If(varFichaBaja.BIEN_INFORMATICO = "PC Escritorio" || varFichaTecnica.BIEN_INFORMATICO = "Laptop",true,false)
+            Visible: =If(varFichaBaja.BIEN_INFORMATICO = "PC Escritorio" || varFichaTecnica.BIEN_INFORMATICO = "Laptop" || varFichaBaja.BIEN_INFORMATICO = "PC ESCRITORIO" || varFichaTecnica.BIEN_INFORMATICO = "LAPTOP",true,false)
             Width: =528
             X: =217
             Y: =707
@@ -623,7 +623,7 @@
 
         FB_Impresora As groupContainer.manualLayoutContainer:
             Height: =202
-            Visible: =If(varFichaBaja.BIEN_INFORMATICO = "Impresora",true,false)
+            Visible: =If(varFichaBaja.BIEN_INFORMATICO = "Impresora" || varFichaBaja.BIEN_INFORMATICO = "IMPRESORA",true,false)
             Width: =528
             X: =216
             Y: =705

@@ -388,7 +388,7 @@ Actualizar_Ficha_Baja As screen:
 
             PC_Escritorio_Laptop_1 As groupContainer.manualLayoutContainer:
                 Height: =676
-                Visible: =If(varFichaBaja.BIEN_INFORMATICO = "PC Escritorio" || varFichaBaja.BIEN_INFORMATICO = "Laptop",true,false)
+                Visible: =If(varFichaBaja.BIEN_INFORMATICO = "PC Escritorio" || varFichaBaja.BIEN_INFORMATICO = "Laptop" || varFichaBaja.BIEN_INFORMATICO = "PC ESCRITORIO" || varFichaBaja.BIEN_INFORMATICO = "LAPTOP",true,false)
                 Width: =586
                 X: =32
                 Y: =1594
@@ -636,7 +636,7 @@ Actualizar_Ficha_Baja As screen:
 
             Impresora_1 As groupContainer.manualLayoutContainer:
                 Height: =631
-                Visible: =If(varFichaBaja.BIEN_INFORMATICO = "Impresora",true,false)
+                Visible: =If(varFichaBaja.BIEN_INFORMATICO = "Impresora" || varFichaBaja.BIEN_INFORMATICO = "IMPRESORA",true,false)
                 Width: =586
                 X: =32
                 Y: =1594

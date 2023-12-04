@@ -68,7 +68,7 @@
 
             PC_Escritorio_Laptop As groupContainer.manualLayoutContainer:
                 Height: =676
-                Visible: =If(varFichaTecnica.BIEN_INFORMATICO = "PC Escritorio" || varFichaTecnica.BIEN_INFORMATICO = "Laptop",true,false)
+                Visible: =If(varFichaTecnica.BIEN_INFORMATICO = "PC Escritorio" || varFichaTecnica.BIEN_INFORMATICO = "Laptop" || varFichaTecnica.BIEN_INFORMATICO = "PC ESCRITORIO" || varFichaTecnica.BIEN_INFORMATICO = "LAPTOP",true,false)
                 Width: =586
                 X: =27
                 Y: =181
@@ -309,7 +309,7 @@
 
             Impresora As groupContainer.manualLayoutContainer:
                 Height: =631
-                Visible: =If(varFichaTecnica.BIEN_INFORMATICO = "Impresora",true,false)
+                Visible: =If(varFichaTecnica.BIEN_INFORMATICO = "Impresora" || varFichaTecnica.BIEN_INFORMATICO = "IMPRESORA",true,false)
                 Width: =586
                 X: =27
                 Y: =181
