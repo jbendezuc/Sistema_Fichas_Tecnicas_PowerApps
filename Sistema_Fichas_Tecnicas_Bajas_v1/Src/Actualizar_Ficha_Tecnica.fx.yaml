@@ -215,13 +215,81 @@ Actualizar_Ficha_Tecnica As screen:
                 Fill: =RGBA(150, 163, 109, 1)
                 Height: =67
                 OnSelect: |-
-                    =
-                    Set(var_foto,JSON(UploadedImage1.Image,JSONFormat.IncludeBinaryData));
-                    
-                    If(var_limpiar_img_RT=1,Set(var_firma_responsable_1,JSON(Firma_Responsable_1.Image,JSONFormat.IncludeBinaryData)),Set(var_firma_responsable_1,varFichaTecnica.FIRMARESPONSABLE));
-                    
-                    If(var_limpiar_img_FT=1,Set(var_firma_tecnico_1,JSON(Firma_Tecnico_1.Image,JSONFormat.IncludeBinaryData)),Set(var_firma_tecnico_1,varFichaTecnica.FIRMATECNICO));
-                    Patch(FICHAS_TECNICAS,LookUp(FICHAS_TECNICAS,ThisRecord.ID = varFichaTecnica.ID),{LOCAL:Local_1.Selected.Result,FACULTAD:Facultad_1.Selected.SEDE,NOMBRE_OFICINA:Nombre_Oficina_1.Text,BIEN_INFORMATICO:Bien_Informatico_1.Selected.BIEN_INFORMATICO,OFICINA:Oficina.Selected.OFICINA,PATRIMONIO:Patrimonio_1.Text,MARCA:Marca_1.Selected.Result,MODELO:Modelo_1.Selected.MODELO,SERIE:Serie_1.Text,TECNICO:Tecnico_1.Text,RESPONSABLE:Responsable_1.Text,ASUNTO:Asunto_1.Selected.SERVICIO,FECHA:Fecha_1.SelectedDate,MEDIO:Medio_Informativo_1.Selected.MEDIO_INFORMATIVO,NOFICIO:Noficio_1.Text,DIAGNOSTICO:Diagnostico_1.Text,FALLA:Falla_1.Text,OBSERVACION:Observacion_1.Text,IMAGEN:Text(var_foto),ESTADO:{Value:"Nuevo"},CORREO:Correo_1.Text,FIRMATECNICO:Text(var_firma_tecnico_1),FIRMARESPONSABLE:Text(var_firma_responsable_1)});UpdateContext({resetearControles_Editar:true});UpdateContext({resetearControles_Editar:false});Navigate(Validacion_Correcta_FT,ScreenTransition.UnCoverRight);Reset(BuscarFichaTecnica)
+                    =Set(
+                        var_foto,
+                        JSON(
+                            UploadedImage1.Image,
+                            JSONFormat.IncludeBinaryData
+                        )
+                    );
+                    If(
+                        var_limpiar_img_RT = 1,
+                        Set(
+                            var_firma_responsable_1,
+                            JSON(
+                                Firma_Responsable_1.Image,
+                                JSONFormat.IncludeBinaryData
+                            )
+                        ),
+                        Set(
+                            var_firma_responsable_1,
+                            varFichaTecnica.FIRMARESPONSABLE
+                        )
+                    );
+                    If(
+                        var_limpiar_img_FT = 1,
+                        Set(
+                            var_firma_tecnico_1,
+                            JSON(
+                                Firma_Tecnico_1.Image,
+                                JSONFormat.IncludeBinaryData
+                            )
+                        ),
+                        Set(
+                            var_firma_tecnico_1,
+                            varFichaTecnica.FIRMATECNICO
+                        )
+                    );
+                    Patch(
+                        FICHAS_TECNICAS,
+                        LookUp(
+                            FICHAS_TECNICAS,
+                            ThisRecord.ID = varFichaTecnica.ID
+                        ),
+                        {
+                            LOCAL: Local_1.Selected.Result,
+                            FACULTAD: Facultad_1.Selected.SEDE,
+                            NOMBRE_OFICINA: Nombre_Oficina_1.Text,
+                            BIEN_INFORMATICO: Bien_Informatico_1.Selected.BIEN_INFORMATICO,
+                            OFICINA: Oficina.Selected.OFICINA,
+                            PATRIMONIO: Patrimonio_1.Text,
+                            MARCA: Marca_1.Selected.Result,
+                            MODELO: Modelo_1.Selected.MODELO,
+                            SERIE: Serie_1.Text,
+                            TECNICO: Tecnico_1.Text,
+                            CORREO_TECNICO: varFichaTecnica.CORREO_TECNICO,
+                            RESPONSABLE: Responsable_1.Text,
+                            ASUNTO: Asunto_1.Selected.SERVICIO,
+                            FECHA: Fecha_1.SelectedDate,
+                            MEDIO: Medio_Informativo_1.Selected.MEDIO_INFORMATIVO,
+                            NOFICIO: Noficio_1.Text,
+                            DIAGNOSTICO: Diagnostico_1.Text,
+                            FALLA: Falla_1.Text,
+                            OBSERVACION: Observacion_1.Text,
+                            IMAGEN: Text(var_foto),
+                            ESTADO: {Value: "Nuevo"},
+                            CORREO: Correo_1.Text,
+                            FIRMATECNICO: Text(var_firma_tecnico_1),
+                            FIRMARESPONSABLE: Text(var_firma_responsable_1)
+                        }
+                    );
+                    UpdateContext({resetearControles_Editar: true});
+                    UpdateContext({resetearControles_Editar: false});
+                    Navigate(
+                        Validacion_Correcta_FT,
+                        ScreenTransition.UnCoverRight
+                    );
+                    Reset(BuscarFichaTecnica)
                 Size: =24
                 Text: ="Actualizar"
                 Width: =258
