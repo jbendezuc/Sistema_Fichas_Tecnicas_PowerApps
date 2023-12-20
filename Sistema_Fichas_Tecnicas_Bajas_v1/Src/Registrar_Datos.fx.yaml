@@ -211,11 +211,64 @@ Registrar_Datos As screen:
                 Fill: =RGBA(150, 163, 109, 1)
                 Height: =49
                 OnSelect: |-
-                    =Set(var_firma_responsable,JSON(Firma_Responsable.Image,JSONFormat.IncludeBinaryData));
-                    Set(var_firma_tecnico,JSON(Firma_Tecnico.Image,JSONFormat.IncludeBinaryData));
-                    Set(var_foto,JSON(UploadedImage2.Image,JSONFormat.IncludeBinaryData));
-                    
-                    Patch(FICHAS_TECNICAS,Defaults(FICHAS_TECNICAS),{LOCAL:Local.Selected.Result,FACULTAD:Facultad.Selected.SEDE,NOMBRE_OFICINA:Nombre_Oficina.Text,BIEN_INFORMATICO:Bien_Informatico.Selected.BIEN_INFORMATICO,OFICINA:Oficina.Selected.OFICINA,PATRIMONIO:Patrimonio.Text,MARCA:Marca.Selected.Result,MODELO:Modelo.Selected.MODELO,SERIE:Serie.Text,TECNICO:Tecnico.Text,RESPONSABLE:Responsable.Text,ASUNTO:Asunto.Selected.SERVICIO,FECHA:Fecha.SelectedDate,MEDIO:Medio_Informativo.Selected.MEDIO_INFORMATIVO,NOFICIO:Noficio.Text,DIAGNOSTICO:Diagnostico.Text,FALLA:Falla.Text,OBSERVACION:Observacion.Text,ESTADO:{Value:"Nuevo"},CORREO:Correo.Text,IMAGEN:Text(var_foto),FIRMATECNICO:Text(var_firma_tecnico),FIRMARESPONSABLE:Text(var_firma_responsable)});UpdateContext({resetearControles:true});UpdateContext({resetearControles:false});Navigate(Validacion_Correcta_FT,ScreenTransition.UnCoverRight);Reset(BuscarFichaTecnica)
+                    =Set(
+                        var_firma_responsable,
+                        JSON(
+                            Firma_Responsable.Image,
+                            JSONFormat.IncludeBinaryData
+                        )
+                    );
+                    Set(
+                        var_firma_tecnico,
+                        JSON(
+                            Firma_Tecnico.Image,
+                            JSONFormat.IncludeBinaryData
+                        )
+                    );
+                    Set(
+                        var_foto,
+                        JSON(
+                            UploadedImage2.Image,
+                            JSONFormat.IncludeBinaryData
+                        )
+                    );
+                    Patch(
+                        FICHAS_TECNICAS,
+                        Defaults(FICHAS_TECNICAS),
+                        {
+                            LOCAL: Local.Selected.Result,
+                            FACULTAD: Facultad.Selected.SEDE,
+                            NOMBRE_OFICINA: Nombre_Oficina.Text,
+                            BIEN_INFORMATICO: Bien_Informatico.Selected.BIEN_INFORMATICO,
+                            OFICINA: Oficina.Selected.OFICINA,
+                            PATRIMONIO: Patrimonio.Text,
+                            MARCA: Marca.Selected.Result,
+                            MODELO: Modelo.Selected.MODELO,
+                            SERIE: Serie.Text,
+                            TECNICO: Tecnico.Text,
+                            CORREO_TECNICO:User().Email,
+                            RESPONSABLE: Responsable.Text,
+                            ASUNTO: Asunto.Selected.SERVICIO,
+                            FECHA: Fecha.SelectedDate,
+                            MEDIO: Medio_Informativo.Selected.MEDIO_INFORMATIVO,
+                            NOFICIO: Noficio.Text,
+                            DIAGNOSTICO: Diagnostico.Text,
+                            FALLA: Falla.Text,
+                            OBSERVACION: Observacion.Text,
+                            ESTADO: {Value: "Nuevo"},
+                            CORREO: Correo.Text,
+                            IMAGEN: Text(var_foto),
+                            FIRMATECNICO: Text(var_firma_tecnico),
+                            FIRMARESPONSABLE: Text(var_firma_responsable)
+                        }
+                    );
+                    UpdateContext({resetearControles: true});
+                    UpdateContext({resetearControles: false});
+                    Navigate(
+                        Validacion_Correcta_FT,
+                        ScreenTransition.UnCoverRight
+                    );
+                    Reset(BuscarFichaTecnica)
                 Size: =24
                 Text: ="Guardar"
                 Width: =355

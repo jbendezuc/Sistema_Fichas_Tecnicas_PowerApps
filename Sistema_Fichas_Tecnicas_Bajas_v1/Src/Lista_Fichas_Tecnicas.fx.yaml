@@ -8,12 +8,12 @@
                 !IsBlank(Tecnico_campo.Text) && IsBlank(BuscarFichaTecnica.Text),
                 Sort(Filter(
                     FICHAS_TECNICAS,
-                    TECNICO = Tecnico_campo.Text
+                    CORREO_TECNICO = Tecnico_campo.Text
                 ),ID,SortOrder.Descending),
                 !IsBlank(Tecnico_campo.Text) && !IsBlank(BuscarFichaTecnica.Text),
                 Sort(Filter(
                     FICHAS_TECNICAS,
-                    TECNICO = Tecnico_campo.Text,
+                    CORREO_TECNICO = Tecnico_campo.Text,
                     StartsWith(FECHA,BuscarFichaTecnica.Text) || StartsWith(PATRIMONIO,BuscarFichaTecnica.Text) || StartsWith(ID,BuscarFichaTecnica.Text)
                 ),ID,SortOrder.Descending),
                 FICHAS_TECNICAS
@@ -222,7 +222,7 @@
     Tecnico_campo As text:
         Default: |-
             =//"Jose Luis Garcia Rojas"
-            User().FullName
+            User().Email
         Height: =64
         HintText: ="Busca por N°/Tecnico/Fecha/Patrimonio"
         Size: =21
