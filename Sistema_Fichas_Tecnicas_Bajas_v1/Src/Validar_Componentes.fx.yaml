@@ -484,7 +484,52 @@
                 Fill: =RGBA(0, 13, 75, 1)
                 Height: =70
                 OnSelect: |-
-                    =Patch(FICHAS_BAJAS,Defaults(FICHAS_BAJAS),{VISITA_TECNICA:varFichaTecnica.ID,MEDIO:varFichaTecnica.MEDIO,NOFICIO:N_Oficio_validar.Text,LOCAL:varFichaTecnica.LOCAL,FACULTAD:varFichaTecnica.FACULTAD,OFICINA:varFichaTecnica.OFICINA,NOMBRE_OFICINA:varFichaTecnica.NOMBRE_OFICINA,BIEN_INFORMATICO:varFichaTecnica.BIEN_INFORMATICO,PATRIMONIO:varFichaTecnica.PATRIMONIO,MARCA:varFichaTecnica.MARCA,MODELO:varFichaTecnica.MODELO,SERIE:varFichaTecnica.SERIE,CREADO_POR:User().FullName,TECNICO:Tecnico_Responsable.Selected.Nombre,RESPONSABLE:varFichaTecnica.RESPONSABLE,CORREO:varFichaTecnica.CORREO,DIAGNOSTICO:varFichaTecnica.DIAGNOSTICO,FALLA:varFichaTecnica.FALLA,SUGERENCIA:Input_Sugerencia.Text,FECHA:Fecha_Baja.SelectedDate,D_DURO:Select_DiscoDuro.Selected.Value,MEMORIA:Select_Memoria.Selected.Value,PLACA:Select_PlacaMain.Selected.Value,TARJ_VIDEO:Select_TVideo.Selected.Value,TARJ_RED:Select_TRed.Selected.Value,FUENTE_P:Select_FPoder.Selected.Value,LECTORA:Select_Lectora.Selected.Value,CARTUCHO:Select_Cartucho.Selected.Value,CABEZAL:Select_Cabezal.Selected.Value,BANDEJA:Select_BandejaSalida.Selected.Value,SOPORTE_PAPEL:Select_SoportePapel.Selected.Value,PANEL_CTRL:Select_PanelControl.Selected.Value});UpdateContext({resetearControlesBaja:true});UpdateContext({resetearControlesBaja:false});Navigate(Lista_Fichas_Bajas,ScreenTransition.Fade);Reset(BuscarFichaBaja)
+                    =Patch(
+                        FICHAS_BAJAS,
+                        Defaults(FICHAS_BAJAS),
+                        {
+                            VISITA_TECNICA: varFichaTecnica.ID,
+                            MEDIO: varFichaTecnica.MEDIO,
+                            NOFICIO: N_Oficio_validar.Text,
+                            LOCAL: varFichaTecnica.LOCAL,
+                            FACULTAD: varFichaTecnica.FACULTAD,
+                            OFICINA: varFichaTecnica.OFICINA,
+                            NOMBRE_OFICINA: varFichaTecnica.NOMBRE_OFICINA,
+                            BIEN_INFORMATICO: varFichaTecnica.BIEN_INFORMATICO,
+                            PATRIMONIO: varFichaTecnica.PATRIMONIO,
+                            MARCA: varFichaTecnica.MARCA,
+                            MODELO: varFichaTecnica.MODELO,
+                            SERIE: varFichaTecnica.SERIE,
+                            CREADO_POR: User().FullName,
+                            CORREO_CREADO_POR:User().Email,
+                            TECNICO: Tecnico_Responsable.Selected.Nombre,
+                            RESPONSABLE: varFichaTecnica.RESPONSABLE,
+                            CORREO: varFichaTecnica.CORREO,
+                            DIAGNOSTICO: varFichaTecnica.DIAGNOSTICO,
+                            FALLA: varFichaTecnica.FALLA,
+                            SUGERENCIA: Input_Sugerencia.Text,
+                            FECHA: Fecha_Baja.SelectedDate,
+                            D_DURO: Select_DiscoDuro.Selected.Value,
+                            MEMORIA: Select_Memoria.Selected.Value,
+                            PLACA: Select_PlacaMain.Selected.Value,
+                            TARJ_VIDEO: Select_TVideo.Selected.Value,
+                            TARJ_RED: Select_TRed.Selected.Value,
+                            FUENTE_P: Select_FPoder.Selected.Value,
+                            LECTORA: Select_Lectora.Selected.Value,
+                            CARTUCHO: Select_Cartucho.Selected.Value,
+                            CABEZAL: Select_Cabezal.Selected.Value,
+                            BANDEJA: Select_BandejaSalida.Selected.Value,
+                            SOPORTE_PAPEL: Select_SoportePapel.Selected.Value,
+                            PANEL_CTRL: Select_PanelControl.Selected.Value
+                        }
+                    );
+                    UpdateContext({resetearControlesBaja: true});
+                    UpdateContext({resetearControlesBaja: false});
+                    Navigate(
+                        Lista_Fichas_Bajas,
+                        ScreenTransition.Fade
+                    );
+                    Reset(BuscarFichaBaja)
                 Size: =17
                 Text: ="Registrar Ficha Baja"
                 Width: =340

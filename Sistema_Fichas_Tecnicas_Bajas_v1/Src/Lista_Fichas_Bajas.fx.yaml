@@ -55,15 +55,15 @@
         Height: =Parent.Height - BrowseGallery1.Y
         Items: |-
             =If(
-                !IsBlank(Tecnico_campoBaja.Text) && IsBlank(BuscarFichaBaja.Text),
+                !IsBlank(Nombre_Tecnico_campoBaja.Text) && IsBlank(BuscarFichaBaja.Text),
                 Sort(Filter(
                     FICHAS_BAJAS,
-                    StartsWith(TECNICO,Tecnico_campoBaja.Text) || StartsWith(CREADO_POR,Tecnico_campoBaja.Text)
+                    StartsWith(TECNICO,Nombre_Tecnico_campoBaja.Text) || StartsWith(CORREO_CREADO_POR,Correo_Tecnico_campoBaja.Text)
                 ),ID,SortOrder.Descending),
-                !IsBlank(Tecnico_campoBaja.Text) && !IsBlank(BuscarFichaBaja.Text),
+                !IsBlank(Nombre_Tecnico_campoBaja.Text) && !IsBlank(BuscarFichaBaja.Text),
                 Sort(Filter(
                     FICHAS_BAJAS,
-                    StartsWith(TECNICO,Tecnico_campoBaja.Text) || StartsWith(CREADO_POR,Tecnico_campoBaja.Text),
+                    StartsWith(TECNICO,Nombre_Tecnico_campoBaja.Text) || StartsWith(CORREO_CREADO_POR,Correo_Tecnico_campoBaja.Text),
                     StartsWith(FECHA,BuscarFichaBaja.Text) || StartsWith(PATRIMONIO,BuscarFichaBaja.Text) || StartsWith(ID,BuscarFichaBaja.Text)
                 ),ID,SortOrder.Descending),
                 FICHAS_BAJAS
@@ -199,13 +199,23 @@
         Y: =11
         ZIndex: =12
 
-    Tecnico_campoBaja As text:
+    Correo_Tecnico_campoBaja As text:
+        Default: =User().Email
+        Height: =70
+        Size: =21
+        Visible: =false
+        Width: =560
+        X: =40
+        Y: =175
+        ZIndex: =13
+
+    Nombre_Tecnico_campoBaja As text:
         Default: =User().FullName
         Height: =70
         Size: =21
         Visible: =false
         Width: =560
         X: =40
-        Y: =158
-        ZIndex: =13
+        Y: =262
+        ZIndex: =14
 
