@@ -215,9 +215,51 @@ Actualizar_Ficha_Baja As screen:
                 Fill: =RGBA(150, 163, 109, 1)
                 Height: =67
                 OnSelect: |-
-                    =Patch(FICHAS_BAJAS,LookUp(FICHAS_BAJAS,ThisRecord.ID = varFichaBaja.ID),{NOFICIO:Noficio_Baja.Text,LOCAL:Local_Baja.Selected.Result,FACULTAD:Facultad_Baja.Selected.SEDE,OFICINA:Oficina_Baja.Selected.OFICINA,NOMBRE_OFICINA:Nombre_Oficina_Baja.Text,BIEN_INFORMATICO:Bien_Informatico_Baja.Selected.BIEN_INFORMATICO,PATRIMONIO:Patrimonio_Baja.Text,MARCA:Marca_Baja.Selected.Result,SERIE:Serie_Baja.Text,TECNICO:Tecnico_Baja.Selected.TECNICO,RESPONSABLE:Responsable_Baja.Text,CORREO:Correo_Baja.Text,DIAGNOSTICO:Diagnostico_Baja.Text,FALLA:Falla_Baja.Text,SUGERENCIA:Sugerencia_Baja.Text,FECHA:Fecha_2.SelectedDate,D_DURO:Select_DiscoDuro_1.Selected.Value,MEMORIA:Select_Memoria_1.Selected.Value,PLACA:Select_PlacaMain_1.Selected.Value,TARJ_VIDEO:Select_TVideo_1.Selected.Value,TARJ_RED:Select_TRed_1.Selected.Value,FUENTE_P:Select_FPoder_1.Selected.Value,LECTORA:Select_Lectora_1.Selected.Value,CARTUCHO:Select_Cartucho_1.Selected.Value,CABEZAL:Select_Cabezal_1.Selected.Value,BANDEJA:Select_BandejaSalida_1.Selected.Value,SOPORTE_PAPEL:Select_SoportePapel_1.Selected.Value,PANEL_CTRL:Select_PanelControl_1.Selected.Value});
-                    
-                    UpdateContext({resetearControles_Baja_Editar:true});UpdateContext({resetearControles_Baja_Editar:false});Navigate(Validacion_Correcta_FB,ScreenTransition.UnCoverRight)
+                    =Patch(
+                        FICHAS_BAJAS,
+                        LookUp(
+                            FICHAS_BAJAS,
+                            ThisRecord.ID = varFichaBaja.ID
+                        ),
+                        {
+                            NOFICIO: Noficio_Baja.Text,
+                            LOCAL: Local_Baja.Selected.Result,
+                            FACULTAD: Facultad_Baja.Selected.SEDE,
+                            OFICINA: Oficina_Baja.Selected.OFICINA,
+                            NOMBRE_OFICINA: Nombre_Oficina_Baja.Text,
+                            BIEN_INFORMATICO: Bien_Informatico_Baja.Selected.BIEN_INFORMATICO,
+                            PATRIMONIO: Patrimonio_Baja.Text,
+                            MARCA: Marca_Baja.Selected.Result,
+                            SERIE: Serie_Baja.Text,
+                            TECNICO: Tecnico_Baja.Selected.TECNICO,
+                            CREADO_POR:varFichaBaja.CREADO_POR,
+                            CORREO_CREADO_POR:varFichaBaja.CORREO_CREADO_POR,
+                            RESPONSABLE: Responsable_Baja.Text,
+                            CORREO: Correo_Baja.Text,
+                            DIAGNOSTICO: Diagnostico_Baja.Text,
+                            FALLA: Falla_Baja.Text,
+                            SUGERENCIA: Sugerencia_Baja.Text,
+                            FECHA: Fecha_2.SelectedDate,
+                            D_DURO: Select_DiscoDuro_1.Selected.Value,
+                            MEMORIA: Select_Memoria_1.Selected.Value,
+                            PLACA: Select_PlacaMain_1.Selected.Value,
+                            TARJ_VIDEO: Select_TVideo_1.Selected.Value,
+                            TARJ_RED: Select_TRed_1.Selected.Value,
+                            FUENTE_P: Select_FPoder_1.Selected.Value,
+                            LECTORA: Select_Lectora_1.Selected.Value,
+                            CARTUCHO: Select_Cartucho_1.Selected.Value,
+                            CABEZAL: Select_Cabezal_1.Selected.Value,
+                            BANDEJA: Select_BandejaSalida_1.Selected.Value,
+                            SOPORTE_PAPEL: Select_SoportePapel_1.Selected.Value,
+                            PANEL_CTRL: Select_PanelControl_1.Selected.Value
+                        }
+                    );
+                    UpdateContext({resetearControles_Baja_Editar: true});
+                    UpdateContext({resetearControles_Baja_Editar: false});
+                    Navigate(
+                        Validacion_Correcta_FB,
+                        ScreenTransition.UnCoverRight
+                    )
                 Size: =24
                 Text: ="Actualizar"
                 Width: =258
